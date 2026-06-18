@@ -1,0 +1,714 @@
+/* --- Core do Design Sistema (Inspirado no Apple Design Guidelines) --- */
+:root {
+    --primary-color: #5d24b3;      
+    --accent-color: #c084fc;       
+    --dark-bg: #000000;            /* Preto Absoluto da Apple para contrastes puros */
+    --text-color: #1d1d1f;         /* Tipografia oficial cinza ultra-escuro Apple */
+    --text-muted: #86868b;         /* Subtextos oficiais Apple */
+    --bg-light: #f5f5f7;           /* Fundo cinza claro clássico de páginas do Mac/iPhone */
+    --white: #ffffff;              
+    --apple-blur: saturate(180%) blur(20px);
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+    --transition-apple: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); /* Curva de animação nativa iOS */
+}
+
+/* --- Resets Gerais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+    letter-spacing: -0.022em; /* Calibração de leitura Apple */
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-light);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased; /* Renderização de fonte sub-pixel fina */
+}
+
+.container {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+/* --- Elemento de Marca Flutuante Avançado --- */
+.floating-logo-balloon {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: var(--apple-blur);
+    -webkit-backdrop-filter: var(--apple-blur);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-apple);
+}
+
+.floating-logo-balloon img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.floating-logo-balloon:hover {
+    transform: scale(1.08) translateY(-4px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 40px rgba(93, 36, 179, 0.2);
+}
+
+/* --- Apple Header/Navbar Inteligente --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--transition-apple);
+    padding: 22px 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white); 
+    text-decoration: none;
+    transition: var(--transition-apple);
+}
+
+.logo a span {
+    color: var(--accent-color); 
+}
+
+/* Estado Ativado no Scroll (Efeito Puro Apple Store) */
+header.scrolled {
+    padding: 12px 0;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: var(--apple-blur);
+    -webkit-backdrop-filter: var(--apple-blur);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+header.scrolled .logo a {
+    color: var(--dark-bg); 
+}
+
+header.scrolled .logo a span {
+    color: var(--primary-color); 
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Menu Mobile Overlay */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.96);
+    backdrop-filter: var(--apple-blur);
+    -webkit-backdrop-filter: var(--apple-blur);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #e8e8ed;
+    font-size: 1.3rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--accent-color);
+}
+
+/* Botão Menu Hamburguer Linhas Finas */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 14px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--white); 
+    transition: var(--transition-apple);
+}
+
+header.scrolled .menu-toggle .bar {
+    background-color: var(--dark-bg); 
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+    background-color: var(--white) !important;
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+    background-color: var(--white) !important;
+}
+
+/* --- Hero Section Imersiva --- */
+.hero-section-grid {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+    text-align: center;
+    overflow: hidden;
+    background-color: var(--dark-bg);
+}
+
+/* Div Especial de Background para podermos aplicar Zoom controlado via Script */
+.hero-bg-zoom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), 
+                      url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    transform: scale(1);
+    z-index: 0;
+}
+
+.hero-grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, var(--dark-bg) 0%, transparent 60%);
+    z-index: 1;
+}
+
+.hero-grid-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-grid-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-grid-content .badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #f5f5f7;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: var(--apple-blur);
+    -webkit-backdrop-filter: var(--apple-blur);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.hero-grid-content h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.hero-grid-content h1 span {
+    background: linear-gradient(90deg, #a855f7, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-grid-content p {
+    font-size: 1.1rem;
+    color: #86868b;
+    line-height: 1.5;
+    margin-bottom: 38px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-grid-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+}
+
+/* Botões com cantos semi-arredondados padrão Apple */
+.btn-grid-main {
+    text-decoration: none;
+    background-color: var(--white);
+    color: var(--dark-bg);
+    padding: 14px 32px;
+    border-radius: 30px; 
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition-apple);
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+}
+
+.btn-grid-main:hover {
+    background-color: #e8e8ed;
+    transform: scale(1.02);
+}
+
+.btn-grid-secondary {
+    text-decoration: none;
+    background-color: transparent;
+    color: #2997ff; /* Azul clássico de links da Apple */
+    padding: 14px 32px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition-apple);
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+}
+
+.btn-grid-secondary:hover {
+    text-decoration: underline;
+}
+
+/* --- Seção Sobre Nós --- */
+.about-section {
+    padding: 120px 0;
+    background-color: var(--white);
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image-box {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.profile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.about-experience-badge {
+    position: absolute;
+    bottom: -15px;
+    right: -10px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+.about-experience-badge h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--dark-bg);
+}
+
+.about-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.about-features {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.about-feat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-feat-item i {
+    color: var(--primary-color);
+}
+
+/* --- Seção de Serviços --- */
+.services-section {
+    padding: 120px 0;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 70px;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--dark-bg);
+}
+
+.section-title p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+/* Card estilo container do iPad Pro */
+.service-card-glass {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.03);
+    border-radius: 24px;
+    padding: 40px;
+    transition: var(--transition-apple);
+}
+
+.service-card-glass:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+
+.icon-box i {
+    font-size: 1.8rem;
+    color: var(--dark-bg);
+    margin-bottom: 20px;
+}
+
+.service-card-apple h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.service-card-glass p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+/* Link Direto Elegante Apple */
+.card-link-apple {
+    text-decoration: none;
+    color: #2997ff;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+}
+
+.card-link-apple i {
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+}
+
+.card-link-apple:hover i {
+    transform: translateX(4px);
+}
+
+/* --- Seção de Diferenciais --- */
+.features-section {
+    padding: 120px 0;
+    background-color: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+.feature-item {
+    text-align: left;
+    padding: 10px;
+}
+
+.feature-icon {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.feature-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* --- Timeline Minimalista --- */
+.steps-section {
+    padding: 120px 0;
+}
+
+.steps-timeline {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.step-card {
+    background: var(--white);
+    padding: 36px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.step-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f5f5f7;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+/* --- Depoimentos Premium --- */
+.testimonials-section {
+    padding: 120px 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.testimonial-card-glass {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px;
+}
+
+.testimonial-card-glass p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    color: #1d1d1f;
+}
+
+/* --- Footer CoreCode --- */
+footer {
+    background-color: #000000;
+    padding: 24px;
+    text-align: center;
+}
+
+footer p {
+    color: #86868b; 
+    font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    font-size: 12px;
+}
+
+footer p a {
+    text-decoration: none; 
+    color: #f5f5f7;         
+    transition: opacity 0.2s;
+}
+
+footer p a:hover {
+    color: #2997ff;
+}
+
+/* --- Media Queries Dinâmicas --- */
+@media (min-width: 768px) {
+    .hero-grid-content h1 {
+        font-size: 4rem;
+    }
+
+    .hero-grid-actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .steps-timeline {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .nav-menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        display: block;
+    }
+
+    .nav-menu ul { 
+        flex-direction: row;
+        gap: 32px; 
+    }
+    
+    .nav-menu a { 
+        color: #f5f5f7; 
+        font-size: 0.85rem;
+        font-weight: 400;
+        opacity: 0.8;
+    }
+    
+    .nav-menu a:hover, .nav-menu a.active { 
+        opacity: 1;
+        color: var(--white); 
+    }
+
+    header.scrolled .nav-menu a {
+        color: #515154;
+    }
+
+    header.scrolled .nav-menu a:hover, header.scrolled .nav-menu a.active {
+        color: #000000;
+        opacity: 1;
+    }
+    
+    .menu-toggle { 
+        display: none; 
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* --- Botão Flutuante do WhatsApp (Estilo Apple Glassmorphism) --- */
+.floating-whatsapp-balloon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(37, 211, 102, 0.2); /* Tom verde WhatsApp transparente */
+    border: 1px solid rgba(37, 211, 102, 0.4);
+    backdrop-filter: var(--apple-blur);
+    -webkit-backdrop-filter: var(--apple-blur);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.15);
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: var(--transition-apple);
+    animation: whatsappPulse 3s infinite ease-in-out;
+}
+
+/* Ícone interno do WhatsApp */
+.floating-whatsapp-balloon i {
+    color: #25D366; /* Verde oficial do WhatsApp */
+    font-size: 1.8rem;
+    transition: var(--transition-apple);
+}
+
+/* Comportamento de Hover Premium */
+.floating-whatsapp-balloon:hover {
+    transform: scale(1.1) translateY(-4px);
+    background: rgba(37, 211, 102, 0.9); /* Preenche com o verde sólido no hover */
+    box-shadow: 0 12px 40px rgba(37, 211, 102, 0.4);
+}
+
+.floating-whatsapp-balloon:hover i {
+    color: var(--white); /* Ícone fica branco ao passar o mouse */
+}
+
+/* Animação de pulsação suave para chamar atenção sem quebrar o minimalismo */
+@keyframes whatsappPulse {
+    0% {
+        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.15), 0 0 0 0 rgba(37, 211, 102, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.25), 0 0 0 12px rgba(37, 211, 102, 0.0);
+    }
+    100% {
+        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.15), 0 0 0 0 rgba(37, 211, 102, 0.0);
+    }
+}
