@@ -1,15 +1,20 @@
 /* --- Core do Design Sistema (Inspirado no Apple Design Guidelines) --- */
 :root {
-    --primary-color: #5d24b3;      
-    --accent-color: #c084fc;       
-    --dark-bg: #000000;            /* Preto Absoluto da Apple para contrastes puros */
-    --text-color: #1d1d1f;         /* Tipografia oficial cinza ultra-escuro Apple */
-    --text-muted: #86868b;         /* Subtextos oficiais Apple */
-    --bg-light: #f5f5f7;           /* Fundo cinza claro clássico de páginas do Mac/iPhone */
-    --white: #ffffff;              
+    --primary-color: #5d24b3;
+    --accent-color: #c084fc;
+    --dark-bg: #000000;
+    /* Preto Absoluto da Apple para contrastes puros */
+    --text-color: #1d1d1f;
+    /* Tipografia oficial cinza ultra-escuro Apple */
+    --text-muted: #86868b;
+    /* Subtextos oficiais Apple */
+    --bg-light: #f5f5f7;
+    /* Fundo cinza claro clássico de páginas do Mac/iPhone */
+    --white: #ffffff;
     --apple-blur: saturate(180%) blur(20px);
     --font-main: 'Plus Jakarta Sans', sans-serif;
-    --transition-apple: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); /* Curva de animação nativa iOS */
+    --transition-apple: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Curva de animação nativa iOS */
 }
 
 /* --- Resets Gerais --- */
@@ -18,7 +23,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-main);
-    letter-spacing: -0.022em; /* Calibração de leitura Apple */
+    letter-spacing: -0.022em;
+    /* Calibração de leitura Apple */
 }
 
 html {
@@ -30,15 +36,20 @@ body {
     background-color: var(--bg-light);
     color: var(--text-color);
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased; /* Renderização de fonte sub-pixel fina */
+    -webkit-font-smoothing: antialiased;
+    /* Renderização de fonte sub-pixel fina */
+}
+
+.animate-text {
+    color: var(--accent-color) !important;
 }
 
 .container {
     width: 100%;
-    max-width: 1160px;
     margin: 0 auto;
-    padding: 0 22px;
+    padding: 0 70px;
 }
+
 
 /* --- Elemento de Marca Flutuante Avançado --- */
 .floating-logo-balloon {
@@ -81,19 +92,19 @@ header {
     z-index: 1000;
     transition: var(--transition-apple);
     padding: 22px 0;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .logo a {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--white); 
+    color: var(--white);
     text-decoration: none;
     transition: var(--transition-apple);
 }
 
 .logo a span {
-    color: var(--accent-color); 
+    color: var(--accent-color);
 }
 
 /* Estado Ativado no Scroll (Efeito Puro Apple Store) */
@@ -106,11 +117,11 @@ header.scrolled {
 }
 
 header.scrolled .logo a {
-    color: var(--dark-bg); 
+    color: var(--dark-bg);
 }
 
 header.scrolled .logo a span {
-    color: var(--primary-color); 
+    color: var(--primary-color);
 }
 
 .nav-container {
@@ -145,19 +156,22 @@ header.scrolled .logo a span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 28px;
+    gap: 20px;
     list-style: none;
+    padding: 40px 20px;
+    text-align: center;
 }
 
 .nav-menu a {
     text-decoration: none;
     color: #e8e8ed;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 500;
     transition: color 0.3s;
 }
 
-.nav-menu a:hover, .nav-menu a.active {
+.nav-menu a:hover,
+.nav-menu a.active {
     color: var(--accent-color);
 }
 
@@ -177,12 +191,12 @@ header.scrolled .logo a span {
 .menu-toggle .bar {
     width: 100%;
     height: 1.5px;
-    background-color: var(--white); 
+    background-color: var(--white);
     transition: var(--transition-apple);
 }
 
 header.scrolled .menu-toggle .bar {
-    background-color: var(--dark-bg); 
+    background-color: var(--dark-bg);
 }
 
 .menu-toggle.active .bar:nth-child(1) {
@@ -212,15 +226,14 @@ header.scrolled .menu-toggle .bar {
     background-color: var(--dark-bg);
 }
 
-/* Div Especial de Background para podermos aplicar Zoom controlado via Script */
 .hero-bg-zoom {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), 
-                      url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
     transform: scale(1);
@@ -243,44 +256,45 @@ header.scrolled .menu-toggle .bar {
 }
 
 .hero-grid-content {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
 }
 
-.hero-grid-content .badge {
+.hero-grid-content .badge,
+.badge {
     display: inline-block;
-    padding: 6px 14px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #f5f5f7;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: var(--apple-blur);
-    -webkit-backdrop-filter: var(--apple-blur);
+    padding: 15px 17px;
+    background: rgba(93, 36, 179, 0.12);
+    color: var(--primary-color);
+    border: 1px solid rgba(93, 36, 179, 0.25);
     border-radius: 100px;
     font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 24px;
 }
 
-.hero-grid-content h1 {
-    font-size: 2.4rem;
-    font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 20px;
-    color: var(--white);
+.hero-grid-content .badge {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f5f5f7;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: var(--apple-blur);
+    -webkit-backdrop-filter: var(--apple-blur);
 }
 
-.hero-grid-content h1 span {
-    background: linear-gradient(90deg, #a855f7, #6366f1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.hero-grid-content h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--white);
 }
 
 .hero-grid-content p {
     font-size: 1.1rem;
-    color: #86868b;
-    line-height: 1.5;
+    color: #a1a1a6;
+    line-height: 1.6;
     margin-bottom: 38px;
-    max-width: 600px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -292,67 +306,171 @@ header.scrolled .menu-toggle .bar {
     align-items: center;
 }
 
-/* Botões com cantos semi-arredondados padrão Apple */
 .btn-grid-main {
     text-decoration: none;
     background-color: var(--white);
     color: var(--dark-bg);
     padding: 14px 32px;
-    border-radius: 30px; 
+    border-radius: 30px;
     font-weight: 600;
     font-size: 0.9rem;
     transition: var(--transition-apple);
     width: 100%;
-    max-width: 260px;
+    max-width: 280px;
     text-align: center;
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
 }
 
 .btn-grid-main:hover {
     background-color: #e8e8ed;
-    transform: scale(1.02);
+    transform: scale(1.02) translateY(-2px);
 }
 
-.btn-grid-secondary {
-    text-decoration: none;
-    background-color: transparent;
-    color: #2997ff; /* Azul clássico de links da Apple */
-    padding: 14px 32px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: var(--transition-apple);
-    width: 100%;
-    max-width: 260px;
-    text-align: center;
-}
-
-.btn-grid-secondary:hover {
-    text-decoration: underline;
-}
-
-/* --- Seção Sobre Nós --- */
-.about-section {
-    padding: 120px 0;
+/* --- Seção de Resultados e Indicadores --- */
+.results-bar-section {
+    padding: 100px 0;
     background-color: var(--white);
 }
 
-.about-container {
+.results-title {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 50px;
+}
+
+.results-title h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--dark-bg);
+}
+
+.results-title p {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.results-counter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.counter-item h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.counter-item p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* --- NOVO CARROSSEL INFINITO (Estilo Apple Partners Carrossel) --- */
+.authority-banner {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-top: 50px;
+    text-align: center;
+}
+
+.authority-banner h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+    padding: 0 10px;
+}
+
+.logo-carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
+}
+
+
+
+/* Gradientes de mascaramento laterais para dar sensação de sumiço suave igual da Apple */
+.logo-carousel-container::before,
+.logo-carousel-container::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 120px;
+    z-index: 2;
+    top: 0;
+    pointer-events: none;
+}
+
+.logo-carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.logo-carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.logo-carousel-track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 60px;
+}
+
+.carousel-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px;
+    object-fit: contain;
+    transition: var(--transition-apple);
+    border-radius: 10px;
+}
+
+.carousel-slide img:hover {
+    filter: grayscale(0%) opacity(100%);
+}
+
+/* --- Seção Quem Somos (Reestruturada) --- */
+.about-section {
+    padding: 120px 0;
+    background-color: var(--bg-light);
+}
+
+.about-main-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 50px;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .about-image-box {
     position: relative;
     width: 100%;
-    max-width: 420px;
+    max-width: 440px;
     margin: 0 auto;
 }
 
 .profile-img {
     width: 100%;
     height: auto;
-    border-radius: 20px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
 .about-experience-badge {
@@ -362,7 +480,8 @@ header.scrolled .menu-toggle .bar {
     background-color: var(--primary-color);
     color: var(--white);
     padding: 12px 20px;
-    border-radius: 12px;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(93, 36, 179, 0.25);
 }
 
 .about-experience-badge h4 {
@@ -371,46 +490,107 @@ header.scrolled .menu-toggle .bar {
 }
 
 .about-content h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20px;
+    line-height: 1.3;
+    margin-bottom: 24px;
     color: var(--dark-bg);
 }
 
-.about-content p {
+.about-content p,
+.about-extended-text p {
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+
+.institutional-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+.inst-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.inst-card i {
+    font-size: 1.6rem;
+    color: var(--primary-color);
     margin-bottom: 16px;
 }
 
-.about-features {
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.inst-card h4 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    color: var(--dark-bg);
 }
 
-.about-feat-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.inst-card p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.5;
 }
 
-.about-feat-item i {
-    color: var(--primary-color);
+/* --- Bloco Interno de Prêmios e Reconhecimentos --- */
+.awards-container {
+    padding-top: 40px;
 }
 
-/* --- Seção de Serviços --- */
+.awards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.award-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    transition: var(--transition-apple);
+}
+
+.award-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+}
+
+.award-trophy {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.award-card h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-bg);
+    margin-bottom: 10px;
+}
+
+.award-card p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* --- Seção de Serviços / Soluções --- */
 .services-section {
     padding: 120px 0;
 }
 
 .section-title {
     text-align: center;
-    max-width: 600px;
-    margin: 0 auto 70px;
+    max-width: 650px;
+    margin: 0 auto 60px;
 }
 
 .section-title h2 {
@@ -422,7 +602,7 @@ header.scrolled .menu-toggle .bar {
 
 .section-title p {
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 0.98rem;
 }
 
 .services-grid {
@@ -431,10 +611,9 @@ header.scrolled .menu-toggle .bar {
     gap: 24px;
 }
 
-/* Card estilo container do iPad Pro */
 .service-card-glass {
     background: var(--white);
-    border: 1px solid rgba(0,0,0,0.03);
+    border: 1px solid rgba(0, 0, 0, 0.02);
     border-radius: 24px;
     padding: 40px;
     transition: var(--transition-apple);
@@ -442,31 +621,29 @@ header.scrolled .menu-toggle .bar {
 
 .service-card-glass:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
 }
 
 .icon-box i {
     font-size: 1.8rem;
-    color: var(--dark-bg);
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
-.service-card-apple h3 {
-    font-size: 1.4rem;
+.services-grid h3 {
+    font-size: 1.35rem;
     margin-bottom: 12px;
+    color: var(--dark-bg);
 }
 
 .service-card-glass p {
     color: var(--text-muted);
     font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 24px;
+    line-height: 1.6;
 }
 
-/* Link Direto Elegante Apple */
 .card-link-apple {
-    text-decoration: none;
-    color: #2997ff;
+    color: var(--primary-color);
     font-weight: 500;
     display: inline-flex;
     align-items: center;
@@ -483,113 +660,332 @@ header.scrolled .menu-toggle .bar {
     transform: translateX(4px);
 }
 
-/* --- Seção de Diferenciais --- */
+/* --- Seção Checklist Diferenciais --- */
 .features-section {
     padding: 120px 0;
     background-color: var(--white);
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
+.checklist-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.feature-item {
-    text-align: left;
-    padding: 10px;
+.check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px;
+    background: var(--bg-light);
+    border-radius: 14px;
 }
 
-.feature-icon {
-    font-size: 1.6rem;
-    color: var(--primary-color);
-    margin-bottom: 16px;
+.check-item i {
+    color: #25D366;
+    font-size: 1.1rem;
+    margin-top: 3px;
 }
 
-.feature-item h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 10px;
+.check-item span {
+    font-size: 0.98rem;
+    color: var(--text-color);
+    line-height: 1.5;
 }
 
-/* --- Timeline Minimalista --- */
+/* --- Seção de Metodologia em Cards --- */
 .steps-section {
     padding: 120px 0;
 }
 
-.steps-timeline {
+.methodology-timeline {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
 }
 
-.step-card {
+.methodology-card {
     background: var(--white);
     padding: 36px;
-    border-radius: 20px;
+    border-radius: 24px;
     position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.01);
 }
 
-.step-number {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #f5f5f7;
+.card-step-num {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
     position: absolute;
     top: 15px;
     right: 25px;
+    opacity: 0.3;
 }
 
-/* --- Depoimentos Premium --- */
-.testimonials-section {
+.methodology-card h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--dark-bg);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.methodology-card p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- SEÇÃO CARROSSEL EMPRESAS QUE CONFIAM --- */
+.trust-companies-section {
+    padding: 120px 0;
+    background-color: var(--white);
+}
+
+.companies-carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin: 50px 0;
+}
+
+.companies-carousel-container::before,
+.companies-carousel-container::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 120px;
+    z-index: 2;
+    top: 0;
+    pointer-events: none;
+}
+
+.companies-carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.companies-carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.companies-carousel-track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    gap: 80px;
+}
+
+.company-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+}
+
+.company-slide img {
+    max-width: 100%;
+    height: auto;
+    max-height: 70px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.trust-footer-text {
+    text-align: center;
+    max-width: 700px;
+    margin: 30px auto 0;
+}
+
+.trust-footer-text p {
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* --- Hub de Vagas Ativas --- */
+.vagas-section-glass {
     padding: 120px 0;
 }
 
-.testimonials-grid {
+.vagas-action-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 70%;
+    margin: 0 auto 60px;
+}
+
+
+.vaga-box-card {
+    background: var(--white);
+    border-radius: 22px;
+    padding: 35px;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+
+}
+
+.vaga-box-card h4 {
+    font-size: 1.2rem;
+    color: var(--dark-bg);
+    margin-bottom: 10px;
+}
+
+.vaga-box-card p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* --- Grid Interna Trampô Inteligente --- */
+.trampo-features-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
 }
 
-.testimonial-card-glass {
-    background: var(--white);
-    border-radius: 24px;
-    padding: 40px;
+.trampo-item {
+    background: var(--bg-light);
+    padding: 26px;
+    border-radius: 18px;
 }
 
-.testimonial-card-glass p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 24px;
-    color: #1d1d1f;
+.trampo-item h5 {
+    font-size: 1.05rem;
+    color: var(--dark-bg);
+    margin-bottom: 8px;
+}
+
+.trampo-item p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* --- Seções Adicionais e Podcast --- */
+.podcast-section,
+.content-hub-section,
+.contact-hub-section {
+    padding: 120px 0;
+}
+
+.podcast-grid,
+.content-categories-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.podcast-card-glass,
+.category-pill-box,
+.contact-option-card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.01);
+}
+
+.podcast-card-glass h4,
+.category-pill-box h5,
+.contact-option-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--dark-bg);
+}
+
+.podcast-card-glass p,
+.category-pill-box p,
+.contact-option-card p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    padding-bottom: 30px;
+}
+
+/* --- Seção de Contato Customizada --- */
+.contact-hub-section {
+    background-color: var(--white);
+}
+
+
+
+.contact-grid-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+.contact-option-card {
+    background: var(--bg-light);
+    text-align: center;
+}
+
+.contact-option-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.social-footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.social-footer-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 /* --- Footer CoreCode --- */
 footer {
     background-color: #000000;
-    padding: 24px;
+    padding: 30px 24px;
     text-align: center;
 }
 
 footer p {
-    color: #86868b; 
+    color: #86868b;
     font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     font-size: 12px;
 }
 
 footer p a {
-    text-decoration: none; 
-    color: #f5f5f7;         
+    text-decoration: none;
+    color: #f5f5f7;
     transition: opacity 0.2s;
 }
 
 footer p a:hover {
     color: #2997ff;
 }
+@media (max-width: 768px) {
+    .vagas-action-grid {
+        width: 100%;
+    }
+}
 
-/* --- Media Queries Dinâmicas --- */
+/* --- Media Queries Dinâmicas (Aceleração Responsiva e Grades Computadas) --- */
 @media (min-width: 768px) {
+    
+
     .hero-grid-content h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
     .hero-grid-actions {
@@ -597,24 +993,52 @@ footer p a:hover {
         justify-content: center;
     }
 
-    .about-container {
+    .results-counter-grid {
+        grid-template-columns: repeat(3, 1fr);
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .results-counter-grid {
+        grid-template-columns: repeat(4, 1fr);
+        width: 80%;
+        margin: 0 auto;
+
+    }
+
+    .about-main-grid {
         grid-template-columns: 1fr 1fr;
     }
 
-    .features-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .steps-timeline {
-        grid-template-columns: repeat(3, 1fr);
+    .institutional-grid,
+    .vagas-action-grid,
+    .contact-grid-options {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .testimonials-grid {
-        grid-template-columns: 1fr 1fr;
+    .awards-grid,
+    .podcast-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .methodology-timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trampo-features-grid,
+    .content-categories-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 992px) {
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 25px;
+    }
+
     .nav-menu {
         position: static;
         width: auto;
@@ -625,38 +1049,54 @@ footer p a:hover {
         display: block;
     }
 
-    .nav-menu ul { 
+    .nav-menu ul {
         flex-direction: row;
-        gap: 32px; 
+        gap: 18px;
+        padding: 0;
     }
-    
-    .nav-menu a { 
-        color: #f5f5f7; 
-        font-size: 0.85rem;
+
+    .nav-menu a {
+        color: #f5f5f7;
+        font-size: 0.82rem;
         font-weight: 400;
         opacity: 0.8;
     }
-    
-    .nav-menu a:hover, .nav-menu a.active { 
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
         opacity: 1;
-        color: var(--white); 
+        color: var(--primary-color);
     }
 
     header.scrolled .nav-menu a {
-        color: #515154;
+        color: var(--primary-color);
     }
 
-    header.scrolled .nav-menu a:hover, header.scrolled .nav-menu a.active {
-        color: #000000;
+    header.scrolled .nav-menu a:hover,
+    header.scrolled .nav-menu a.active {
+        color: var(--primary-color);
         opacity: 1;
     }
-    
-    .menu-toggle { 
-        display: none; 
+
+    .menu-toggle {
+        display: none;
     }
 
     .services-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .awards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .methodology-timeline {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .trampo-features-grid,
+    .content-categories-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -665,7 +1105,7 @@ footer p a:hover {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: rgba(37, 211, 102, 0.2); /* Tom verde WhatsApp transparente */
+    background: rgba(37, 211, 102, 0.2);
     border: 1px solid rgba(37, 211, 102, 0.4);
     backdrop-filter: var(--apple-blur);
     -webkit-backdrop-filter: var(--apple-blur);
@@ -682,33 +1122,88 @@ footer p a:hover {
     animation: whatsappPulse 3s infinite ease-in-out;
 }
 
-/* Ícone interno do WhatsApp */
 .floating-whatsapp-balloon i {
-    color: #25D366; /* Verde oficial do WhatsApp */
+    color: #25D366;
     font-size: 1.8rem;
     transition: var(--transition-apple);
 }
 
-/* Comportamento de Hover Premium */
 .floating-whatsapp-balloon:hover {
     transform: scale(1.1) translateY(-4px);
-    background: rgba(37, 211, 102, 0.9); /* Preenche com o verde sólido no hover */
+    background: rgba(37, 211, 102, 0.9);
     box-shadow: 0 12px 40px rgba(37, 211, 102, 0.4);
 }
 
 .floating-whatsapp-balloon:hover i {
-    color: var(--white); /* Ícone fica branco ao passar o mouse */
+    color: var(--white);
 }
 
-/* Animação de pulsação suave para chamar atenção sem quebrar o minimalismo */
 @keyframes whatsappPulse {
     0% {
         box-shadow: 0 8px 32px rgba(37, 211, 102, 0.15), 0 0 0 0 rgba(37, 211, 102, 0.3);
     }
+
     50% {
         box-shadow: 0 8px 32px rgba(37, 211, 102, 0.25), 0 0 0 12px rgba(37, 211, 102, 0.0);
     }
+
     100% {
         box-shadow: 0 8px 32px rgba(37, 211, 102, 0.15), 0 0 0 0 rgba(37, 211, 102, 0.0);
+    }
+}
+
+/* --- Ajuste da Logo com Imagem Integrada --- */
+.logo a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    /* Espaçamento elegante entre o texto e a imagem da logo */
+}
+
+.navbar-logo-img {
+    height: 80px;
+    /* Altura ideal e discreta para a barra de navegação estilo Apple */
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition-apple);
+    vertical-align: middle;
+    border-radius: 15px;
+    /* Bordas suavizadas para um toque mais Apple */
+}
+
+/* Suavização para telas retina ou quando a navbar estiver em estado Scrolled */
+header.scrolled .navbar-logo-img {
+    height: 26px;
+    /* Reduz sutilmente junto com a navbar ao scrollar, se desejar */
+}
+
+/* ==========================================================================
+   --- BLOCO DE CORREÇÃO DE VAZAMENTO VISUAL (MOBILE ANTI-SCROLL) ---
+   ========================================================================== */
+
+/* Ajuste preventivo para telas mobile (inferiores a 768px) */
+@media (max-width: 767px) {
+    .container {
+        /* Reduz o padding agressivo de 70px para 20px, mantendo a área útil visível */
+        padding: 0 35px !important;
+        max-width: 100vw;
+        overflow: hidden;
+    }
+
+    /* Impede que o elemento com número absoluto vaze para fora dos cards de metodologia */
+    .methodology-card {
+        overflow: hidden;
+    }
+
+    /* Corrige o balão da logo e do WhatsApp para não esticarem o viewport horizontal */
+    .floating-logo-balloon,
+    .floating-whatsapp-balloon {
+        max-width: calc(100vw - 60px);
+    }
+
+    /* Garante que imagens de seções quem somos ou grids não quebrem o limite da tela */
+    .about-image-box,
+    .profile-img {
+        max-width: 100% !important;
     }
 }
