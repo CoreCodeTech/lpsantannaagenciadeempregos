@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
 
     // --- 3. CINEMATIC BACKGROUND ZOOM (Efeito Apple Keynote) ---
-    // Faz a imagem de fundo expandir milimetricamente de forma suave conforme você rola a página
     gsap.to(".hero-bg-zoom", {
         scale: 1.15,
         scrollTrigger: {
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // --- 4. ORQUESTRAÇÃO DE ANIMAÇÕES INTERNAS DA HERO ---
-    // Linha do tempo sequencial perfeita ao carregar a página
     const tlHero = gsap.timeline();
     
     tlHero.from(".animate-text", {
@@ -93,16 +91,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // --- 6. BALÃO FLUTUANTE PREMIUM (INTERAÇÃO ADICIONAL) ---
-    // Faz o balão do logo reagir ligeiramente à rolagem além da animação CSS nativa
-    gsap.to(".floating-logo-balloon", {
-        y: -15,
-        scrollTrigger: {
-            trigger: "body",
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 1
-        }
+    // --- 6. ANIMAÇÃO DE CARROSSEL INFINITO (GSAP CINEMATIC MARCAS) ---
+    // Faz a esteira de marcas do Sebrae/Gerdau rodar de forma perfeitamente contínua
+    gsap.to(".logo-carousel-track", {
+        xPercent: -50,
+        ease: "none",
+        duration: 22, // Tempo em segundos para uma volta completa da esteira
+        repeat: -1
+    });
+
+    // Faz a esteira das marcas clientes rodar no sentido oposto ou contínuo
+    gsap.to(".companies-carousel-track", {
+        xPercent: -50,
+        ease: "none",
+        duration: 26,
+        repeat: -1
     });
 
     // --- 7. MENU MOBILE INTERATIVO ---
