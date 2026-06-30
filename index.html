@@ -12,6 +12,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <script src="https://cdn.tailwindcss.com"></script>
 
 
@@ -76,33 +78,105 @@
     </section>
 
     <!-- Resultados e Indicadores + Carrossel de Reconhecimento Apple Style -->
-    <section class="results-bar-section">
-        <div class="container">
-            <div class="results-title reveal-up">
-                <h3>Resultados que geram confiança</h3>
-                <p>A Sant'Anna Agência de Empregos conecta empresas aos profissionais certos por meio de processos
-                    seletivos estratégicos, ágeis e alinhados às necessidades de cada negócio.</p>
+    <section style="padding: 100px 0; background-color: var(--white); font-family: var(--font-main);">
+        <style>
+            @media (max-width: 768px) {
+                .mobile-flex {
+                    flex-direction: column !important;
+                    gap: 2rem !important;
+                }
+
+                .mobile-grid {
+                    grid-template-columns: 1fr !important;
+                    gap: 30px !important;
+                }
+
+                .hide-mobile {
+                    display: none !important;
+                }
+
+                .mobile-font-h2 {
+                    font-size: 2.5rem !important;
+                }
+            }
+        </style>
+
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
+                <h3 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 16px; color: var(--dark-bg);">
+                    Resultados que geram <span style="color: var(--primary-color);">confiança</span>
+                </h3>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+                    A Sant'Anna Agência de Empregos conecta empresas aos profissionais certos por meio de processos
+                    seletivos estratégicos, ágeis e alinhados às necessidades de cada negócio.
+                </p>
             </div>
 
-            <div class="results-counter-grid reveal-up">
-                <div class="counter-item">
-                    <h2>30+</h2>
-                    <p>Empresas Atendidas</p>
+            <!-- Adicionada classe mobile-flex -->
+            <div class="mobile-flex" style="display: flex; gap: 3rem; place-content: center; padding: 20px;">
+                <div style="padding: 10px;">
+                    <h2 class="mobile-font-h2"
+                        style="font-size: 3rem; font-weight: 800; color: var(--primary-color); margin-bottom: 8px;"><i
+                            class="bi bi-buildings"></i><br> 50+</h2>
+                    <p style="font-size: 0.95rem; color: var(--text-color); font-weight: 600;">Empresas Atendidas</p>
                 </div>
-                <div class="counter-item">
-                    <h2>1.000+</h2>
-                    <p>Profissionais Encaminhados</p>
+                <span class="hide-mobile" style="width: 1px; background-color: rgba(0, 0, 0, 0.151);"></span>
+                <div style="padding: 10px;">
+                    <h2 class="mobile-font-h2"
+                        style="font-size: 3rem; font-weight: 800; color: var(--primary-color); margin-bottom: 8px;"><i
+                            class="bi bi-people"></i><br> 1.000+</h2>
+                    <p style="font-size: 0.95rem; color: var(--text-color); font-weight: 600;">Pessoas contratadas</p>
                 </div>
-                <div class="counter-item">
-                    <h2>3.000+</h2>
-                    <p>Candidatos no Banco de Talentos</p>
+                <span class="hide-mobile" style="width: 1px; background-color: rgba(0, 0, 0, 0.151);"></span>
+                <div style="padding: 10px;">
+                    <h2 class="mobile-font-h2"
+                        style="font-size: 3rem; font-weight: 800; color: var(--primary-color); margin-bottom: 8px;"><i
+                            class="bi bi-person-lines-fill"></i><br> 3.000+</h2>
+                    <p style="font-size: 0.95rem; color: var(--text-color); font-weight: 600;">Candidatos no Banco de
+                        Talentos</p>
                 </div>
-                <div class="counter-item">
-                    <h2>100%</h2>
-                    <p>De Satisfação dos Clientes</p>
+                <span class="hide-mobile" style="width: 1px; background-color: rgba(0, 0, 0, 0.151);"></span>
+                <div style="padding: 10px;">
+                    <h2 class="mobile-font-h2"
+                        style="font-size: 3rem; font-weight: 800; color: var(--primary-color); margin-bottom: 8px;"><i
+                            class="bi bi-emoji-smile"></i><br> 100%</h2>
+                    <p style="font-size: 0.95rem; color: var(--text-color); font-weight: 600;">Clientes Satisfeitos</p>
                 </div>
             </div>
 
+            <div
+                style="background-color: var(--bg-light); border-radius: 24px; padding: 60px 40px; text-align: center;">
+                <h4 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 40px; font-weight: 700;">
+                    Candidatos selecionados para nossos clientes</h4>
+                <!-- Adicionada classe mobile-grid -->
+                <div class="mobile-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 900px; margin: 0 auto;">
+
+                    <div style="padding: 10px;">
+                        <span
+                            style="background: var(--primary-color); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">2025</span>
+                        <h2 class="mobile-font-h2"
+                            style="font-size: 4rem; font-weight: 800; color: var(--primary-color); margin: 15px 0 5px;">
+                            <i class="bi bi-people"></i> 65+</h2>
+                        <h3 style="color: black; font-size: 1.5rem; margin: 5px 0;">candidatos</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-top: 10px;">
+                            Selecionado pela Sant'Anna Agência de Empregos para contratação em empresas clientes.</p>
+                    </div>
+
+                    <div style="padding: 10px;">
+                        <span
+                            style="background: var(--primary-color); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">2026</span>
+                        <h2 class="mobile-font-h2"
+                            style="font-size: 4rem; font-weight: 800; color: var(--primary-color); margin: 15px 0 5px;">
+                            <i class="bi bi-people"></i> 80+</h2>
+                        <h3 style="color: black; font-size: 1.5rem; margin: 5px 0;">candidatos</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-top: 10px;">
+                            Selecionado pela Sant'Anna Agência de Empregos para contratação em empresas clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="authority-section">
@@ -122,6 +196,8 @@
                     <div class="carousel-slide"><img src="img/mcti.jpg" alt="MCTI"></div>
                     <div class="carousel-slide"><img src="img/instituto coria.jpeg" alt="Instituto Cória"></div>
                     <div class="carousel-slide"><img src="img/celeva incubadora.jpeg" alt="Celeva Incubadora"></div>
+                    <div class="carousel-slide"><img src="img/bluts.jpeg" alt="bluts"></div>
+                    <div class="carousel-slide"><img src="img/cgb.jpeg" alt="cgb"></div>
                     <!-- Grupo 2 (Duplicado para efeito infinito contínuo) -->
                     <div class="carousel-slide"><img src="img/sebrae.jpg" alt="Sebrae RS"></div>
                     <div class="carousel-slide"><img src="img/instituto helda.jpg" alt="Instituto Helda Gerdau"></div>
@@ -132,7 +208,9 @@
                     <div class="carousel-slide"><img src="img/finep.jpg" alt="Finep"></div>
                     <div class="carousel-slide"><img src="img/mcti.jpg" alt="MCTI"></div>
                     <div class="carousel-slide"><img src="img/instituto coria.jpeg" alt="Instituto Cória"></div>
-                    <div class="carousel-slide"><img src="img/celeva incubadora.jpeg" alt="Celeva Incubadora"></div>                    
+                    <div class="carousel-slide"><img src="img/celeva incubadora.jpeg" alt="Celeva Incubadora"></div> 
+                    <div class="carousel-slide"><img src="img/bluts.jpeg" alt="bluts"></div>
+                    <div class="carousel-slide"><img src="img/cgb.jpeg" alt="cgb"></div>
                 </div>
             </div>
         </div>
