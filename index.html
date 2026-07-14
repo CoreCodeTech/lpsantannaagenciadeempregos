@@ -15,93 +15,87 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-
 </head>
 
 <body>
 
-    <!-- Botão Flutuante do WhatsApp -->
     <a href="https://wa.me/5551984867665?text=Olá, vim pelo site da Sant'Anna Agência de Empregos! Gostaria de mais informações.."
-        class="floating-whatsapp-balloon reveal-element" target="_blank" rel="noopener noreferrer"
+        class="balao-whatsapp-flutuante elemento-revelar" target="_blank" rel="noopener noreferrer"
         aria-label="Fale conosco no WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Apple Style Navbar Inteligente -->
-    <header id="navbar">
-        <div class="container nav-container">
-            <div class="logo">
+    <header id="cabecalho-principal">
+        <div class="conteiner-principal conteiner-navegacao">
+            <div class="logotipo">
                 <a href="#inicio">Sant'Anna<span>.</span>
-                    <img class="navbar-logo-img" src="img/logo.png" alt="Logo Sant'Anna Agência de Empregos">
+                    <img class="imagem-logo-barra" src="img/logo.png" alt="Logo Sant'Anna Agência de Empregos">
                 </a>
             </div>
-            <nav class="nav-menu">
+            <nav class="menu-navegacao">
                 <ul>
-                    <li><a href="#inicio" class="nav-item active">Início</a></li>
-                    <li><a href="#sobre" class="nav-item">Quem Somos</a></li>
-                    <li><a href="#solucoes" class="nav-item">Soluções para Empresas</a></li>
-                    <li><a href="#metodologia" class="nav-item">Nossa Metodologia</a></li>
-                    <li><a href="#investimento" class="nav-item">Investimento Sem Risco</a></li>
-                    <li><a href="#vagas" class="nav-item">Vagas</a></li>
-                    <li><a href="#trampo" class="nav-item">Trampô Inteligente</a></li>
-                    <li><a href="#podcast" class="nav-item">Trampô Podcast</a></li>
-                    <li><a href="#conteudo" class="nav-item">Central de Conteúdo</a></li>
-                    <li><a href="#contato" class="nav-item">Contato</a></li>
+                    <li><a href="#inicio" class="item-navegacao ativo">Início</a></li>
+                    <li><a href="#sobre" class="item-navegacao">Quem Somos</a></li>
+                    <li><a href="#solucoes" class="item-navegacao">Soluções para Empresas</a></li>
+                    <li><a href="#metodologia" class="item-navegacao">Nossa Metodologia</a></li>
+                    <li><a href="#investimento" class="item-navegacao">Investimento Sem Risco</a></li>
+                    <li><a href="#vagas" class="item-navegacao">Vagas</a></li>
+                    <li><a href="#trampo" class="item-navegacao">Trampô Inteligente</a></li>
+                    <li><a href="#podcast" class="item-navegacao">Trampô Podcast</a></li>
+                    <li><a href="#conteudo" class="item-navegacao">Central de Conteúdo</a></li>
+                    <li><a href="#contato" class="item-navegacao">Contato</a></li>
                 </ul>
             </nav>
 
-            <button class="menu-toggle" aria-label="Abrir Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <button class="alternador-menu-mobile" aria-label="Abrir Menu">
+                <span class="barra-interna"></span>
+                <span class="barra-interna"></span>
+                <span class="barra-interna"></span>
             </button>
         </div>
     </header>
 
-    <!-- Hero Section Voltada para Empresas (B2B) -->
-    <section id="inicio" class="hero-section-grid">
-        <div class="hero-bg-zoom"></div>
-        <div class="hero-grid-overlay"></div>
-        <div class="container hero-grid-container">
-            <div class="hero-grid-content">
-                <h1 class="animate-text">Encontramos os profissionais que sua empresa precisa.</h1>
-                <p class="animate-text-delayed">Apresentamos candidatos qualificados, alinhados ao perfil técnico e
+    <section id="inicio" class="secao-hero-grade">
+        <div class="hero-fundo-zoom"></div>
+        <div class="hero-camada-grade"></div>
+        <div class="conteiner-principal hero-conteiner-grade">
+            <div class="hero-conteudo-grade">
+                <h1 class="texto-animado">Encontramos os profissionais que sua empresa precisa.</h1>
+                <p class="texto-animado-atraso">Apresentamos candidatos qualificados, alinhados ao perfil técnico e
                     comportamental que o seu negócio procura.</p>
 
-                <div class="hero-grid-actions animate-fade">
+                <div class="hero-botoes-acao animacao-esmaecer">
                     <a href="https://wa.me/5551984867665?text=Olá, vim pelo site da Sant'Anna Agência de Empregos! Gostaria de mais informações.."
-                        class="btn-grid-main" target="_blank" rel="noopener noreferrer">Falar com um Especialista</a>
+                        class="botao-grade-principal" target="_blank" rel="noopener noreferrer">Falar com um Especialista</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resultados e Indicadores + Carrossel de Reconhecimento Apple Style -->
     <section style="padding: 100px 0; background-color: var(--white); font-family: var(--font-main);">
         <style>
             @media (max-width: 768px) {
-                .mobile-flex {
+                .flexivel-mobile {
                     flex-direction: column !important;
                     gap: 2rem !important;
                 }
 
-                .mobile-grid {
+                .grade-mobile {
                     grid-template-columns: 1fr !important;
                     gap: 30px !important;
                 }
 
-                .hide-mobile {
+                .ocultar-mobile {
                     display: none !important;
                 }
 
-                .mobile-font-h2 {
+                .fonte-h2-mobile {
                     font-size: 2.5rem !important;
                 }
             }
         </style>
 
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div class="conteiner-principal" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
 
             <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
                 <h3 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 16px; color: var(--dark-bg);">
@@ -113,32 +107,31 @@
                 </p>
             </div>
 
-            <!-- Adicionada classe mobile-flex -->
-            <div class="mobile-flex" style="display: flex; gap: 3rem; place-content: center; padding: 20px;">
+            <div class="flexivel-mobile" style="display: flex; gap: 3rem; place-content: center; padding: 20px;">
                 <div style="padding: 10px;">
-                    <h2 class="mobile-font-h2"
+                    <h2 class="fonte-h2-mobile"
                         style="font-size: 3rem; font-weight: 800; color: var(--primary-color); margin-bottom: 8px;"><i
                             class="bi bi-buildings"></i><br> 50+</h2>
                     <p style="font-size: 0.95rem; color: var(--text-color); font-weight: 600;">Empresas Atendidas</p>
                 </div>
-                <span class="hide-mobile" style="width: 1px; background-color: rgba(0, 0, 0, 0.151);"></span>
+                <span class="ocultar-mobile" style="width: 1px; background-color: rgba(0, 0, 0, 0.151);"></span>
                 <div style="padding: 10px;">
-                    <h2 class="mobile-font-h2"
+                    <h2 class="fonte-h2-mobile"
                         style="font-size: 3rem; font-weight: 800; color: var(--primary-color); margin-bottom: 8px;"><i
                             class="bi bi-people"></i><br> 1.000+</h2>
                     <p style="font-size: 0.95rem; color: var(--text-color); font-weight: 600;">Pessoas contratadas</p>
                 </div>
-                <span class="hide-mobile" style="width: 1px; background-color: rgba(0, 0, 0, 0.151);"></span>
+                <span class="ocultar-mobile" style="width: 1px; background-color: rgba(0, 0, 0, 0.151);"></span>
                 <div style="padding: 10px;">
-                    <h2 class="mobile-font-h2"
+                    <h2 class="fonte-h2-mobile"
                         style="font-size: 3rem; font-weight: 800; color: var(--primary-color); margin-bottom: 8px;"><i
                             class="bi bi-person-lines-fill"></i><br> 3.000+</h2>
                     <p style="font-size: 0.95rem; color: var(--text-color); font-weight: 600;">Candidatos no Banco de
                         Talentos</p>
                 </div>
-                <span class="hide-mobile" style="width: 1px; background-color: rgba(0, 0, 0, 0.151);"></span>
+                <span class="ocultar-mobile" style="width: 1px; background-color: rgba(0, 0, 0, 0.151);"></span>
                 <div style="padding: 10px;">
-                    <h2 class="mobile-font-h2"
+                    <h2 class="fonte-h2-mobile"
                         style="font-size: 3rem; font-weight: 800; color: var(--primary-color); margin-bottom: 8px;"><i
                             class="bi bi-emoji-smile"></i><br> 100%</h2>
                     <p style="font-size: 0.95rem; color: var(--text-color); font-weight: 600;">Clientes Satisfeitos</p>
@@ -149,14 +142,13 @@
                 style="background-color: var(--bg-light); border-radius: 24px; padding: 60px 40px; text-align: center;">
                 <h4 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 40px; font-weight: 700;">
                     Candidatos selecionados para nossos clientes</h4>
-                <!-- Adicionada classe mobile-grid -->
-                <div class="mobile-grid"
+                <div class="grade-mobile"
                     style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 900px; margin: 0 auto;">
 
                     <div style="padding: 10px;">
                         <span
                             style="background: var(--primary-color); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">2025</span>
-                        <h2 class="mobile-font-h2"
+                        <h2 class="fonte-h2-mobile"
                             style="font-size: 4rem; font-weight: 800; color: var(--primary-color); margin: 15px 0 5px;">
                             <i class="bi bi-people"></i> 65+</h2>
                         <h3 style="color: black; font-size: 1.5rem; margin: 5px 0;">candidatos</h3>
@@ -167,7 +159,7 @@
                     <div style="padding: 10px;">
                         <span
                             style="background: var(--primary-color); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">2026</span>
-                        <h2 class="mobile-font-h2"
+                        <h2 class="fonte-h2-mobile"
                             style="font-size: 4rem; font-weight: 800; color: var(--primary-color); margin: 15px 0 5px;">
                             <i class="bi bi-people"></i> 80+</h2>
                         <h3 style="color: black; font-size: 1.5rem; margin: 5px 0;">candidatos</h3>
@@ -179,130 +171,121 @@
         </div>
     </section>
 
-    <section class="authority-section">
-        <!-- Faixa com Carrossel de Marcas de Autoridade -->
-        <div class="authority-banner reveal-up">
+    <section class="secao-autoridade">
+        <div class="banner-autoridade revelar-acima">
             <h4>Reconhecida por instituições de referência em inovação e desenvolvimento empresarial</h4>
-            <div class="logo-carousel-container">
-                <div class="logo-carousel-track">
-                    <!-- Grupo 1 -->
-                    <div class="carousel-slide"><img src="img/sebrae.jpg" alt="Sebrae RS"></div>
-                    <div class="carousel-slide"><img src="img/instituto helda.jpg" alt="Instituto Helda Gerdau"></div>
-                    <div class="carousel-slide"><img src="img/fundacao geracoes.jpg" alt="Fundação Gerações"></div>
-                    <div class="carousel-slide"><img src="img/atitus educacao.jpg" alt="Atitus Educação"></div>
-                    <div class="carousel-slide"><img src="img/pacto alegre.jpg" alt="Pacto Alegre"></div>
-                    <div class="carousel-slide"><img src="img/fapergs.jpg" alt="FAPERGS"></div>
-                    <div class="carousel-slide"><img src="img/finep.jpg" alt="Finep"></div>
-                    <div class="carousel-slide"><img src="img/mcti.jpg" alt="MCTI"></div>
-                    <div class="carousel-slide"><img src="img/instituto coria.jpeg" alt="Instituto Cória"></div>
-                    <div class="carousel-slide"><img src="img/celeva incubadora.jpeg" alt="Celeva Incubadora"></div>
-                    <div class="carousel-slide"><img src="img/bluts.jpeg" alt="bluts"></div>
-                    <div class="carousel-slide"><img src="img/cgb.jpeg" alt="cgb"></div>
-                    <!-- Grupo 2 (Duplicado para efeito infinito contínuo) -->
-                    <div class="carousel-slide"><img src="img/sebrae.jpg" alt="Sebrae RS"></div>
-                    <div class="carousel-slide"><img src="img/instituto helda.jpg" alt="Instituto Helda Gerdau"></div>
-                    <div class="carousel-slide"><img src="img/fundacao geracoes.jpg" alt="Fundação Gerações"></div>
-                    <div class="carousel-slide"><img src="img/atitus educacao.jpg" alt="Atitus Educação"></div>
-                    <div class="carousel-slide"><img src="img/pacto alegre.jpg" alt="Pacto Alegre"></div>
-                    <div class="carousel-slide"><img src="img/fapergs.jpg" alt="FAPERGS"></div>
-                    <div class="carousel-slide"><img src="img/finep.jpg" alt="Finep"></div>
-                    <div class="carousel-slide"><img src="img/mcti.jpg" alt="MCTI"></div>
-                    <div class="carousel-slide"><img src="img/instituto coria.jpeg" alt="Instituto Cória"></div>
-                    <div class="carousel-slide"><img src="img/celeva incubadora.jpeg" alt="Celeva Incubadora"></div> 
-                    <div class="carousel-slide"><img src="img/bluts.jpeg" alt="bluts"></div>
-                    <div class="carousel-slide"><img src="img/cgb.jpeg" alt="cgb"></div>
+            <div class="carrossel-logos-conteiner">
+                <div class="carrossel-logos-trilho">
+                    <div class="slide-carrossel"><img src="img/sebrae.jpg" alt="Sebrae RS"></div>
+                    <div class="slide-carrossel"><img src="img/instituto helda.jpg" alt="Instituto Helda Gerdau"></div>
+                    <div class="slide-carrossel"><img src="img/fundacao geracoes.jpg" alt="Fundação Gerações"></div>
+                    <div class="slide-carrossel"><img src="img/atitus educacao.jpg" alt="Atitus Educação"></div>
+                    <div class="slide-carrossel"><img src="img/pacto alegre.jpg" alt="Pacto Alegre"></div>
+                    <div class="slide-carrossel"><img src="img/fapergs.jpg" alt="FAPERGS"></div>
+                    <div class="slide-carrossel"><img src="img/finep.jpg" alt="Finep"></div>
+                    <div class="slide-carrossel"><img src="img/mcti.jpg" alt="MCTI"></div>
+                    <div class="slide-carrossel"><img src="img/instituto coria.jpeg" alt="Instituto Cória"></div>
+                    <div class="slide-carrossel"><img src="img/celeva incubadora.jpeg" alt="Celeva Incubadora"></div>
+                    <div class="slide-carrossel"><img src="img/bluts.jpeg" alt="bluts"></div>
+                    <div class="slide-carrossel"><img src="img/cgb.jpeg" alt="cgb"></div>
+                    <div class="slide-carrossel"><img src="img/sebrae.jpg" alt="Sebrae RS"></div>
+                    <div class="slide-carrossel"><img src="img/instituto helda.jpg" alt="Instituto Helda Gerdau"></div>
+                    <div class="slide-carrossel"><img src="img/fundacao geracoes.jpg" alt="Fundação Gerações"></div>
+                    <div class="slide-carrossel"><img src="img/atitus educacao.jpg" alt="Atitus Educação"></div>
+                    <div class="slide-carrossel"><img src="img/pacto alegre.jpg" alt="Pacto Alegre"></div>
+                    <div class="slide-carrossel"><img src="img/fapergs.jpg" alt="FAPERGS"></div>
+                    <div class="slide-carrossel"><img src="img/finep.jpg" alt="Finep"></div>
+                    <div class="slide-carrossel"><img src="img/mcti.jpg" alt="MCTI"></div>
+                    <div class="slide-carrossel"><img src="img/instituto coria.jpeg" alt="Instituto Cória"></div>
+                    <div class="slide-carrossel"><img src="img/celeva incubadora.jpeg" alt="Celeva Incubadora"></div> 
+                    <div class="slide-carrossel"><img src="img/bluts.jpeg" alt="bluts"></div>
+                    <div class="slide-carrossel"><img src="img/cgb.jpeg" alt="cgb"></div>
                 </div>
             </div>
         </div>
-        </div>
     </section>
 
-    <!-- Por que as empresas escolhem a Sant'Anna (Layout Checklist) -->
-    <section id="risco-zero" class="features-section">
-        <div class="container">
-            <div class="section-title reveal-up">
-                <div class="badge">Vantagens Competitivas</div>
+    <section id="risco-zero" class="secao-diferenciais">
+        <div class="conteiner-principal">
+            <div class="titulo-secao revelar-acima">
+                <div class="etiqueta-destaque">Vantagens Competitivas</div>
                 <h2>Por que as empresas escolhem a Sant'Anna?</h2>
                 <p>Descubra as garantias e o modelo consultivo que mitigam riscos operacionais e financeiros da sua
                     gestão.</p>
             </div>
 
-            <div class="checklist-wrapper reveal-up">
-                <div class="check-item"><i class="fa-solid fa-check"></i> <span><strong>Investimento sem risco:</strong>
+            <div class="bloco-lista-checagem revelar-acima">
+                <div class="item-checagem"><i class="fa-solid fa-check"></i> <span><strong>Investimento sem risco:</strong>
                         sua empresa paga somente após a efetiva contratação do profissional.</span></div>
-                <div class="check-item"><i class="fa-solid fa-check"></i> <span><strong>Apresentação
+                <div class="item-checagem"><i class="fa-solid fa-check"></i> <span><strong>Apresentação
                             qualificada:</strong> profissionais rigorosamente avaliados e alinhados ao escopo exato da
                         vaga.</span></div>
-                <div class="check-item"><i class="fa-solid fa-check"></i> <span><strong>Recrutamento
+                <div class="item-checagem"><i class="fa-solid fa-check"></i> <span><strong>Recrutamento
                             personalizado:</strong> processos modelados de acordo com a cultura interna e objetivos
                         estratégicos da marca.</span></div>
-                <div class="check-item"><i class="fa-solid fa-check"></i> <span><strong>Agilidade na
+                <div class="item-checagem"><i class="fa-solid fa-check"></i> <span><strong>Agilidade na
                             identificação:</strong> inteligência aplicada para mapear e apresentar os melhores talentos
                         no menor tempo.</span></div>
-                <div class="check-item"><i class="fa-solid fa-check"></i> <span><strong>Garantia de reposição:</strong>
+                <div class="item-checagem"><i class="fa-solid fa-check"></i> <span><strong>Garantia de reposição:</strong>
                         segurança jurídica e operacional respaldada por cláusulas contratuais transparentes.</span>
                 </div>
-                <div class="check-item"><i class="fa-solid fa-check"></i> <span><strong>Atendimento consultivo:</strong>
+                <div class="item-checagem"><i class="fa-solid fa-check"></i> <span><strong>Atendimento consultivo:</strong>
                         acompanhamento especializado de ponta a ponta durante as fases seletivas.</span></div>
-                <div class="check-item"><i class="fa-solid fa-check"></i> <span><strong>Redução drástica do
+                <div class="item-checagem"><i class="fa-solid fa-check"></i> <span><strong>Redução drástica do
                             turnover:</strong> contratações altamente assertivas que fortalecem a retenção do capital
                         humano.</span></div>
             </div>
         </div>
     </section>
 
-    <!-- Carrossel de Empresas que Confiam -->
-    <section class="trust-companies-section">
-        <div class="container">
-            <div class="section-title reveal-up">
-                <div class="badge">Parcerias</div>
+    <section class="secao-empresas-confiam">
+        <div class="conteiner-principal">
+            <div class="titulo-secao revelar-acima">
+                <div class="etiqueta-destaque">Parcerias</div>
                 <h2>Empresas que confiam na Sant'Anna</h2>
                 <p>Temos orgulho de contribuir para o crescimento de empresas de diversos segmentos, conectando talentos
                     qualificados às oportunidades certas.</p>
             </div>
 
-            <!-- Carrossel Infinito das Empresas Atendidas -->
-            <div class="companies-carousel-container reveal-up">
-                <div class="companies-carousel-track">
-                    <!-- Grupo 1 -->
-                    <div class="company-slide"><img src="img/a saideira.jpeg" alt="Empresa Parceira"></div>
-                    <div class="company-slide"><img src="img/casa do ap de queijo.jpeg" alt="Empresa Parceira"></div>
-                    <div class="company-slide"><img src="img/grupo 3t.jpeg" alt="Empresa Parceira"></div>
-                    <div class="company-slide"><img src="img/grupo arbaitman.jpeg" alt="Empresa Parceira"></div>
-                    <div class="company-slide"><img src="img/grupo locale.jpeg" alt="Empresa Parceira"></div>
-                    <div class="company-slide"><img src="img/meju poke.jpeg" alt="Empresa Parceira"></div>
-                    <div class="company-slide"><img src="img/omo.jpeg" alt="Empresa Parceira"></div>
+            <div class="carrossel-empresas-conteiner revelar-acima">
+                <div class="carrossel-empresas-trilho">
+                    <div class="slide-empresa"><img src="img/a saideira.jpeg" alt="Empresa Parceira"></div>
+                    <div class="slide-empresa"><img src="img/casa do ap de queijo.jpeg" alt="Empresa Parceira"></div>
+                    <div class="slide-empresa"><img src="img/grupo 3t.jpeg" alt="Empresa Parceira"></div>
+                    <div class="slide-empresa"><img src="img/grupo arbaitman.jpeg" alt="Empresa Parceira"></div>
+                    <div class="slide-empresa"><img src="img/grupo locale.jpeg" alt="Empresa Parceira"></div>
+                    <div class="slide-empresa"><img src="img/meju poke.jpeg" alt="Empresa Parceira"></div>
+                    <div class="slide-empresa"><img src="img/omo.jpeg" alt="Empresa Parceira"></div>
 
-                    <!-- Grupo 2 (Duplicado) -->
-                    <div class="company-slide"><img src="img/a saideira.jpeg" alt="Empresa Parceira"></div>
-                    <div class="company-slide"><img src="img/casa do ap de queijo.jpeg" alt="Empresa Parceira"></div>
-                    <div class="company-slide"><img src="img/grupo 3t.jpeg" alt="Empresa Parceira"></div>
-                    <div class="company-slide"><img src="img/grupo arbaitman.jpeg" alt="Empresa Parceira"></div>
-                    <div class="company-slide"><img src="img/grupo locale.jpeg" alt="Empresa Parceira"></div>
-                    <div class="company-slide"><img src="img/meju poke.jpeg" alt="Empresa Parceira"></div>
-                    <div class="company-slide"><img src="img/omo.jpeg" alt="Empresa Parceira"></div>
+                    <div class="slide-empresa"><img src="img/a saideira.jpeg" alt="Empresa Parceira"></div>
+                    <div class="slide-empresa"><img src="img/casa do ap de queijo.jpeg" alt="Empresa Parceira"></div>
+                    <div class="slide-empresa"><img src="img/grupo 3t.jpeg" alt="Empresa Parceira"></div>
+                    <div class="slide-empresa"><img src="img/grupo arbaitman.jpeg" alt="Empresa Parceira"></div>
+                    <div class="slide-empresa"><img src="img/grupo locale.jpeg" alt="Empresa Parceira"></div>
+                    <div class="slide-empresa"><img src="img/meju poke.jpeg" alt="Empresa Parceira"></div>
+                    <div class="slide-empresa"><img src="img/omo.jpeg" alt="Empresa Parceira"></div>
                 </div>
             </div>
 
-            <div class="trust-footer-text reveal-up">
-                <p>Cada contratação representa o compromisso da Sant'Anna em entregar profissionais preparados para
+            <div class="texto-rodape-confianca revelar-acima">
+                <p>Cada contratação represents o compromisso da Sant'Anna em entregar profissionais preparados para
                     gerar resultados e fortalecer equipes de alta performance.</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção Quem Somos Reestruturada -->
-    <section id="sobre" class="about-section">
-        <div class="container">
-            <div class="about-main-grid">
-                <div class="about-image-box reveal-left">
-                    <img src="img/pessoa.jpg" alt="Equipe Sant'Anna Agência de Empregos" class="profile-img">
-                    <div class="about-experience-badge">
+    <section id="sobre" class="secao-sobre-nos">
+        <div class="conteiner-principal">
+            
+            <div class="grade-principal-sobre">
+                <div class="caixa-imagem-sobre revelar-esquerda">
+                    <img src="img/pessoa.jpg" alt="Equipe Sant'Anna Agência de Empregos" class="imagem-perfil">
+                    <div class="etiqueta-experiencia-sobre">
                         <h4>Fundador</h4>
                     </div>
                 </div>
-                <div class="about-content reveal-right">
-                    <div class="badge">Quem Somos</div>
+                <div class="conteudo-sobre revelar-direita">
+                    <div class="etiqueta-destaque">Quem Somos</div>
                     <h2>A Sant'Anna Agência de Empregos nasceu para ajudar empresas a contratar com mais segurança,
                         rapidez e assertividade.</h2>
                     <p>Sabemos que uma contratação equivocada gera custos, retrabalho, perda de produtividade e impacto
@@ -312,8 +295,7 @@
                     <p>Nossa missão não é simplesmente encaminhar currículos. Nosso compromisso é apresentar
                         profissionais qualificados, avaliados e alinhados às competências técnicas e comportamentais que
                         a sua empresa procura.</p>
-
-                    <p>Trabalhamos com foco em excelência, porque entendemos que cada contratação é um investimento. E
+                    <p>Trabalhamos com foco em excelência, porque entendemos que cada contratação é um investment. E
                         para
                         que esse investimento seja seguro, nosso modelo é baseado em resultado: sua empresa só realiza o
                         pagamento após a efetiva contratação do profissional selecionado.</p>
@@ -326,59 +308,116 @@
                         custo. Porque mais do que preencher vagas, ajudamos empresas a construir equipes fortes,
                         produtivas
                         e preparadas para crescer.</p>
-
                 </div>
             </div>
 
+<section class="nossa-historia-2">
+            <div class="titulo-secao revelar-acima">
+            <div class="etiqueta-destaque">Trajetória</div>
+            <h2>Nossa História</h2>
+        </div>
+    <div class="card-historia">
+        
 
-            <!-- Bloco de Reconhecimentos e Inovação Embutido -->
-            <div class="awards-container">
-                <div class="section-title reveal-up">
-                    <div class="badge">Prêmios de Excelência</div>
+        
+        <div class="texto-estendido-sobre revelar-acima">
+            <p>Fundada em 30 de janeiro de 2024, sob o CNPJ 64.829.232/0001-30, a Sant'Anna Agência de Empregos nasceu com o propósito de conectar empresas aos profissionais certos, tornando os processos de contratação mais rápidos, seguros e assertivos.</p>
+            <p>Criada por Fernando Sant'Anna, profissional com ampla experiência em gestão, empregabilidade e desenvolvimento de pessoas, a empresa surgiu para atender uma necessidade comum das organizações: encontrar talentos qualificados sem desperdiçar tempo, recursos e oportunidades.</p>
+            <p>Desde sua fundação, a Sant'Anna vem se consolidando como uma parceira estratégica para empresas de diversos segmentos, offering soluções completas de recrutamento e seleção, sempre com foco na qualidade dos profissionais apresentados e nos resultados alcançados pelos clientes.</p>
+            <p>Nosso trabalho é pautado pelo entendimento profundo das necessidades de cada empresa, identificando profissionais alinhados ao perfil técnico, comportamental e cultural desejado para cada oportunidade.</p>
+            <p>Acreditamos que contratar deve ser uma decisão segura. Por isso, adotamos um modelo de investimento sem risco, no qual a empresa realiza o pagamento somente após a efetiva contratação do profissional apresentado pela Sant'Anna Agência de Empregos.</p>
+            <p>Mais do que preencher vagas, ajudamos empresas a construir equipes fortes, produtivas e preparadas para impulsionar crescimento, desempenho e resultados sustentáveis.</p>
+            <p>Hoje, a Sant'Anna Agência de Empregos segue ampliando sua atuação, investindo in inovação, tecnologia e inteligência para conectar talentos e organizações de forma cada vez mais eficiente, mantendo o compromisso que deu origem à empresa: gerar resultados para quem contrata e oportunidades para quem busca crescer profissionalmente.</p>
+            <p>Em 05 de junho de 2026, a Sant’Anna Agência de Empregos deu um importante passo em sua trajetória de expansão, iniciando suas operações no Estado de São Paulo. A atuação passou a contemplar empresas de grande porte com operações nos Aeroportos de Congonhas e Guarulhos, ampliando sua presença no mercado nacional e fortalecendo sua capacidade de atender organizações que buscam excelência, agilidade e assertividade em seus processos de contratação.</p>
+            <p>Essa expansão representa o compromisso da Sant'Anna Agência de Empregos em levar sua metodologia, expertise e modelo de contratação sem risco para novos mercados, contribuindo para o crescimento de empresas em diferentes regiões do país.</p>
+        </div>
+
+    </div>
+</section>
+
+ <div class="titulo-secao revelar-acima">
+    <div class="etiqueta-destaque">Propósito</div>
+    <h2>Missão, Visão e Valores</h2>
+</div>
+
+<div class="grade-institucional revelar-acima">
+    
+    <div class="cartao-institucional" style="display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important;">
+        <div style="display: flex; justify-content: center;"><i class="fa-solid fa-rocket"></i></div>
+        <h4>MISSÃO</h4>
+        <p>Conectar empresas aos profissionais certos por meio de processos seletivos ágeis, seguros e assertivos.</p>
+    </div>
+    
+    <div class="cartao-institucional" style="display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important;">
+        <div style="display: flex; justify-content: center;"><i class="fa-solid fa-eye"></i></div>
+        <h4>VISÃO</h4>
+        <p>Ser referência em recrutamento e seleção, reconhecida pela qualidade das contratações e pelos resultados entregues aos clientes.</p>
+    </div>
+    
+    <div class="cartao-institucional" style="display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important;">
+        <div style="display: flex; justify-content: center;"><i class="fa-solid fa-gem"></i></div>
+        <h4>VALORES</h4>
+        <div style="display: inline-flex; flex-direction: column; align-items: flex-start; text-align: left; margin-top: 5px;">
+            <p style="margin-bottom: 4px;">• Ética e Transparência</p>
+            <p style="margin-bottom: 4px;">• Compromisso com Resultados</p>
+            <p style="margin-bottom: 4px;">• Excelência no Atendimento</p>
+            <p style="margin-bottom: 4px;">• Agilidade e Eficiência</p>
+            <p style="margin-bottom: 4px;">• Inovação</p>
+            <p style="margin-bottom: 4px;">• Valorização das Pessoas</p>
+            <p style="margin-bottom: 4px;">• Foco no Cliente</p>
+            <p style="margin-bottom: 0;">• Contratação sem Risco</p>
+        </div>
+    </div>
+
+</div>
+
+            <div class="conteiner-premios">
+                <div class="titulo-secao revelar-acima">
+                    <div class="etiqueta-destaque">Prêmios de Excelência</div>
                     <h2>Reconhecimentos e Inovação</h2>
                     <p>Nossa capacidade de inovação, gestão e geração de resultados é validada por importantes
                         instituições de fomento ao empreendedorismo e desenvolvimento empresarial.</p>
                 </div>
 
-                <div class="awards-grid">
-                    <div class="award-card reveal-up">
-                        <span class="award-trophy">🏆</span>
+                <div class="grade-premios">
+                    <div class="cartao-premio revelar-acima">
+                        <span class="trofeu-premio">🏆</span>
                         <h4>Amplitude 2024</h4>
                         <p>Selecionada para o Programa Amplitude Perifa 2024, promovido pelo Instituto Helda Gerdau, com
                             apoio da Coalizão Pelo Impacto Porto Alegre e execução do Instituto Cória. A iniciativa
                             reconheceu o potencial inovador e impulsionou a aceleração empresarial da nossa operação.
                         </p>
                     </div>
-                    <div class="award-card reveal-up">
-                        <span class="award-trophy">🏆</span>
+                    <div class="cartao-premio revelar-acima">
+                        <span class="trofeu-premio">🏆</span>
                         <h4>Re-cria POA 2024</h4>
                         <p>Reconhecida pelo Programa Re-cria POA 2024 (Coalizão Pelo Impacto Porto Alegre / Instituto
                             Cória). O destaque validou nossas soluções voltadas à geração de trabalho, renda e
                             recuperação econômica regional durante a reconstrução do RS pós-enchentes.</p>
                     </div>
-                    <div class="award-card reveal-up">
-                        <span class="award-trophy">🏆</span>
+                    <div class="cartao-premio revelar-acima">
+                        <span class="trofeu-premio">🏆</span>
                         <h4>Eleva Porto Alegre 2025</h4>
                         <p>Selecionada para o Programa Eleva Porto Alegre 2025, realizado pela Semente Negócios em
                             parceria com Atitus Educação, Coalizão Pelo Impacto, Instituto Helda Gerdau e Pacto Alegre.
                             Foco no desenvolvimento sustentável e soluções disruptivas.</p>
                     </div>
-                    <div class="award-card reveal-up">
-                        <span class="award-trophy">🏆</span>
+                    <div class="cartao-premio revelar-acima">
+                        <span class="trofeu-premio">🏆</span>
                         <h4>DUX-tec 2025</h4>
                         <p>Selecionada para o DUX-tec 2025, programa promovido pela Fundação Gerações. A participação
                             chancela nossa aplicação prática de gestão otimizada, inovação contínua e inteligência
                             mercadológica voltada a corporações.</p>
                     </div>
-                    <div class="award-card reveal-up">
-                        <span class="award-trophy">🏆</span>
+                    <div class="cartao-premio revelar-acima">
+                        <span class="trofeu-premio">🏆</span>
                         <h4>StartupRS GO – Gravataí 2026</h4>
                         <p>O Trampô Inteligente foi selecionado para o programa de pré-aceleração promovido pelo Sebrae
                             RS em parceria com a Prefeitura de Gravataí, atestando o alto potencial de transformação
                             tecnológica de nossa inteligência artificial.</p>
                     </div>
-                    <div class="award-card reveal-up">
-                        <span class="award-trophy">🏆</span>
+                    <div class="cartao-premio revelar-acima">
+                        <span class="trofeu-premio">🏆</span>
                         <h4>Programa Centelha</h4>
                         <p>O Trampô Inteligente conquistou a 8ª colocação geral no renomado Programa Centelha (MCTI,
                             Finep, FAPERGS e parceiros). O prêmio reconheceu o projeto com elevado potencial de inovação
@@ -389,19 +428,18 @@
         </div>
     </section>
 
-    <!-- Soluções para Empresas (Cards Estilo iPad Pro) -->
-    <section id="solucoes" class="services-section">
-        <div class="container">
-            <div class="section-title reveal-up">
-                <div class="badge">Nossos Serviços</div>
+    <section id="solucoes" class="secao-servicos">
+        <div class="conteiner-principal">
+            <div class="titulo-secao revelar-acima">
+                <div class="etiqueta-destaque">Nossos Serviços</div>
                 <h2>Soluções para Empresas</h2>
                 <p>Estrutura completa desenvolvida para suprir as demandas mais exigentes e complexas do ecossistema
                     corporativo atual.</p>
             </div>
 
-            <div class="services-grid">
-                <div class="service-card-glass reveal-up">
-                    <div class="icon-box"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="grade-servicos">
+                <div class="cartao-servico-vidro revelar-acima">
+                    <div class="caixa-icone"><i class="fa-solid fa-user-tie"></i></div>
                     <h3>Recrutamento e Seleção</h3>
                     <p>Encontrar o profissional certo exige mais do que analisar currículos. A Sant'Anna Agência de
                         Empregos conduz processos seletivos completos, estruturados e alinhados às necessidades de cada
@@ -414,8 +452,8 @@
                     </p>
                 </div>
 
-                <div class="service-card-glass reveal-up">
-                    <div class="icon-box"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                <div class="cartao-servico-vidro revelar-acima">
+                    <div class="caixa-icone"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
                     <h3>Hunting de Profissionais</h3>
                     <p>Para posições estratégicas ou perfis de difícil contratação, atuamos de forma ativa na
                         identificação e abordagem de talentos.
@@ -426,8 +464,8 @@
                     </p>
                 </div>
 
-                <div class="service-card-glass reveal-up">
-                    <div class="icon-box"><i class="fa-solid fa-database"></i></div>
+                <div class="cartao-servico-vidro revelar-acima">
+                    <div class="caixa-icone"><i class="fa-solid fa-database"></i></div>
                     <h3>Banco de Talentos</h3>
                     <p>A Sant'Anna mantém um banco de talentos constantemente atualizado, composto por profissionais de
                         diferentes áreas de atuação e níveis de experiência.
@@ -438,8 +476,8 @@
                     </p>
                 </div>
 
-                <div class="service-card-glass reveal-up">
-                    <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="cartao-servico-vidro revelar-acima">
+                    <div class="caixa-icone"><i class="fa-solid fa-shield-halved"></i></div>
                     <h3>Contratação sem Risco</h3>
                     <p>Acreditamos que uma parceria deve ser construída sobre resultados.
                         Por isso, a Sant'Anna Agência de Empregos trabalha com um modelo de investimento sem risco para
@@ -451,8 +489,8 @@
                     </p>
                 </div>
 
-                <div class="service-card-glass reveal-up" style="grid-column: 1 / -1; max-width: 100%;">
-                    <div class="icon-box"><i class="fa-solid fa-arrows-rotate"></i></div>
+                <div class="cartao-servico-vidro revelar-acima" style="grid-column: 1 / -1; max-width: 100%;">
+                    <div class="caixa-icone"><i class="fa-solid fa-arrows-rotate"></i></div>
                     <h3>Garantia de Reposição</h3>
                     <p>Nosso compromisso não termina na contratação.
                         Caso o profissional contratado não permaneça na empresa durante o período de garantia previsto
@@ -468,267 +506,346 @@
         </div>
     </section>
 
-    <!-- Nossa Metodologia (Linha de Produção Avançada) -->
-    <section id="metodologia" class="steps-section">
-        <div class="container">
-            <div class="section-title reveal-up">
-                <div class="badge">Operação</div>
+    <section id="metodologia" class="secao-passos-metodologia">
+        <div class="conteiner-principal">
+            <div class="titulo-secao revelar-acima">
+                <div class="etiqueta-destaque">Operação</div>
                 <h2>Nossa Metodologia</h2>
-                <p>Um fluxo rigoroso que assegura transparência, velocidade e altíssima assertividade em cada etapa da
-                    esteira.</p>
+                <p>Todo processo começa com a compreensão da realidade da empresa. Buscamos entender a cultura organizacional, 
+                    os desafios da função, as competências necessárias e os objetivos da contratação, permitindo uma atuação alinhada 
+                    às expectativas do cliente.</p>
             </div>
 
-            <div class="methodology-timeline">
-                <div class="methodology-card reveal-up">
-                    <div class="card-step-num">01</div>
+            <div class="linha-tempo-metodologia">
+                <div class="cartao-metodologia revelar-acima">
+                    <div class="numero-passo-cartao">01</div>
                     <h4>Entendimento da Necessidade</h4>
-                    <p>Imersão analítica na cultura corporativa, rotinas de trabalho e nos desafios reais da sua gestão.
+                    <p>Todo processo começa com a compreensão da realidade da empresa. Buscamos entender a cultura organizacional, os desafios da função,
+                         as competências necessárias e os objetivos da contratação, permitindo uma atuação alinhada às expectativas do cliente.
                     </p>
                 </div>
-                <div class="methodology-card reveal-up">
-                    <div class="card-step-num">02</div>
+                <div class="cartao-metodologia revelar-acima">
+                    <div class="numero-passo-cartao">02</div>
                     <h4>Definição do Perfil Ideal</h4>
-                    <p>Construção minuciosa da matriz de competências técnicas e comportamentais necessárias para a
-                        cadeira.</p>
+                    <p>Em conjunto com a empresa, definimos o perfil técnico e comportamental desejado para a vaga. Essa etapa é fundamental para garantir que os candidatos
+                         apresentados possuam as características necessárias para contribuir com os resultados da organização.</p>
                 </div>
-                <div class="methodology-card reveal-up">
-                    <div class="card-step-num">03</div>
+                <div class="cartao-metodologia revelar-acima">
+                    <div class="numero-passo-cartao">03</div>
                     <h4>Divulgação Estratégica</h4>
-                    <p>Veiculação da oportunidade em canais fechados, redes profissionais e em nossa ampla base mapeada.
+                    <p>A oportunidade é divulgada em nossa base de talentos, redes sociais, canais próprios e parceiros estratégicos, ampliando o alcance da vaga e aumentando 
+                        as possibilidades de encontrar os profissionais mais aderentes ao perfil buscado.
                     </p>
                 </div>
-                <div class="methodology-card reveal-up">
-                    <div class="card-step-num">04</div>
+                <div class="cartao-metodologia revelar-acima">
+                    <div class="numero-passo-cartao">04</div>
                     <h4>Triagem e Seleção</h4>
-                    <p>Filtro analítico aprofundado dos perfis mapeados para isolar exclusivamente candidatos altamente
-                        aderentes.</p>
+                    <p>Realizamos uma análise criteriosa dos currículos recebidos, avaliando experiências, qualificações, competências e aderência aos requisitos estabelecidos pela empresa.</p>
                 </div>
-                <div class="methodology-card reveal-up">
-                    <div class="card-step-num">05</div>
+                <div class="cartao-metodologia revelar-acima">
+                    <div class="numero-passo-cartao">05</div>
                     <h4>Entrevista e Avaliação</h4>
-                    <p>Aplicações práticas de avaliações técnicas, comportamentais e testes de fit cultural
-                        estruturados.</p>
+                    <p>Os candidatos pré-selecionados passam por entrevistas e avaliações que permitem identificar competências técnicas, comportamentais, capacidade de adaptação e alinhamento com a cultura organizacional.</p>
                 </div>
-                <div class="methodology-card reveal-up">
-                    <div class="card-step-num">06</div>
+                <div class="cartao-metodologia revelar-acima">
+                    <div class="numero-passo-cartao">06</div>
                     <h4>Apresentação dos Candidatos</h4>
-                    <p>Envio de relatórios dos finalistas prontos para as entrevistas decisivas finais com o gestor do
-                        requisitante.</p>
+                    <p>Encaminhamos à empresa apenas os profissionais que atendem aos critérios definidos para a vaga, proporcionando maior assertividade e otimização do processo de contratação.</p>
                 </div>
-                <div class="methodology-card reveal-up">
-                    <div class="card-step-num">07</div>
+                <div class="cartao-metodologia revelar-acima">
+                    <div class="numero-passo-cartao">07</div>
                     <h4>Acompanhamento da Contratação</h4>
-                    <p>Suporte e consultoria ativa na fase burocrática de negociação e no fechamento do onboarding do
-                        profissional.</p>
+                    <p>Acreditamos que a confiança deve ser construída por meio de resultados. Por isso, a Sant'Anna Agência de Empregos trabalha com um modelo de investimento sem risco, no qual a empresa realiza o pagamento somente após a efetiva contratação do profissional apresentado.
+                        Esse modelo demonstra nosso compromisso com a qualidade da entrega e oferece mais segurança para nossos clientes, que investem apenas quando o objetivo é alcançado.
+</p>
                 </div>
-                <div class="methodology-card reveal-up">
-                    <div class="card-step-num">08</div>
+                <div class="cartao-metodologia revelar-acima">
+                    <div class="numero-passo-cartao">08</div>
                     <h4>Garantia Pós-Contratação</h4>
-                    <p>Monitoramento preventivo de adaptação e sustentação da cláusula de reposição contratual integral.
+                    <p>Acompanhamos todas as etapas do processo até a efetiva contratação do profissional, oferecendo suporte tanto para a empresa quanto para o candidato.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!--Investimento sem Risco-->
-    <section id="investimento" class="risk-free-section">
-        <div class="container">
-            <div class="section-title reveal-up">
-                <div class="badge">Investimento sem Risco</div>
-                <h2>Investimento Sem Risco</h2>
-                <div class="methodology-card reveal-up">
-                    <p>A Sant'Anna assume o compromisso com o resultado. Sua empresa somente realiza o pagamento após a
-                        efetiva contratação do profissional selecionado.
-                        Se não entregarmos candidatos alinhados ao perfil definido, não há cobrança pelo processo. </p>
-                </div>
-            </div>
-
-
+    <section id="investimento" class="secao-diferenciais">
+    <div class="conteiner-principal">
+        
+        <div class="titulo-secao revelar-acima">
+            <div class="etiqueta-destaque">Investimento sem Risco</div>
+            <h2>Investimento Sem Risco</h2>
         </div>
-    </section>
+        <div class="cartao-metodologia revelar-acima">
+            <p>Contratar um novo profissional é uma decisão importante e que exige segurança.
+               Pensando nisso, a Sant'Anna Agência </br>de Empregos trabalha com um modelo de Investimento Sem Risco, oferecendo mais tranquilidade
+               e confiança </br> para sua empresa durante todo o processo de recrutamento e seleção.
+            </p>
+        </div>
 
-    <!-- Ecossistema de Vagas Ativas -->
-    <section id="vagas" class="vagas-section-glass">
-        <div class="container">
-            <div class="section-title reveal-up">
-                <div class="badge">Oportunidades</div>
+        <div class="titulo-secao revelar-acima">
+            <h2>Como Funciona?</h2>
+        </div>
+        <div class="cartao-metodologia revelar-acima">
+            <p>Nossa equipe realiza todas as etapas do processo seletivo, desde o entendimento da necessidade da vaga até a apresentação dos candidatos mais alinhados ao perfil definido pela empresa.</p>
+            <p>Sua empresa não realiza nenhum pagamento antecipado para iniciar o processo.</p>
+            <p>O investimento somente é realizado após a efetiva contratação do profissional apresentado pela Sant'Anna Agência de Empregos.</p>
+            <p>Isso significa que nosso compromisso está totalmente alinhado ao resultado. Trabalhamos para encontrar o profissional certo, com as competências técnicas e comportamentais que sua empresa procura.</p>               
+        </div>
+
+        <div class="titulo-secao revelar-acima">
+            <h2>Por que este modelo é vantajoso?</h2>
+        </div>
+        <div class="cartao-metodologia verificar-lista revelar-acima">
+        <p><span class="check-verde">✓</span> Sem custos antecipados</p>
+        <p><span class="check-verde">✓</span> Sem riscos financeiros durante o processo seletivo</p>
+        <p><span class="check-verde">✓</span> Foco total na qualidade dos candidatos apresentados</p>
+        <p><span class="check-verde">✓</span> Maior segurança para a tomada de decisão</p>     
+        <p><span class="check-verde">✓</span> Alinhamento de interesses entre a Sant'Anna e sua empresa</p>
+        <p><span class="check-verde">✓</span> Pagamento somente após a contratação</p>
+        </div>
+
+           <div class="cartao-metodologia verificar-lista revelar-acima">
+                <p>Na Sant'Anna Agência de Empregos, acreditamos que a confiança deve ser conquistada por meio de resultados.</p>
+                <p>Por isso, assumimos o compromisso de entregar profissionais qualificados e alinhados às necessidades da sua empresa, para que você invista apenas quando o objetivo for alcançado.</p>
+                <p>Sem contratação, não existe cobrança para a sua empresa. Simples assim.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <section id="vagas" class="secao-vagas-vidro">
+        <div class="conteiner-principal">
+            <div class="titulo-secao revelar-acima">
+                <div class="etiqueta-destaque">Oportunidades</div>
                 <h2>Hub de Vagas Abertas</h2>
                 <p>Seja direcionado diretamente ao mercado de trabalho enviando seu currículo para nossa base analítica.
                 </p>
             </div>
-            <div class="vagas-action-grid reveal-up">
-                <div class="vaga-box-card icon-box"><i class="fa-solid fa-user-tie"></i>
+            <div class="grade-acao-vagas revelar-acima">
+                <div class="cartao-caixa-vaga caixa-icone"><i class="fa-solid fa-user-tie"></i>
                     <h4>Para Candidatos</h4>
                     <p>Encontre a oportunidade ideal para o seu perfil. Oferecemos suporte completo, cadastro de
                         currículos simplificado e direcionamento direto para o mercado.</p>
                     <a href="https://santannaagenciadeempregos.vercel.app/login" target="_blank"
-                        class="card-link-apple"> Quero me candidatar <i class="fa-solid fa-arrow-right-long"></i></a>
+                        class="link-cartao-apple"> Quero me candidatar <i class="fa-solid fa-arrow-right-long"></i></a>
                 </div>
-                <div class="vaga-box-card icon-box"> <i class="fa-solid fa-briefcase"></i>
+                <div class="cartao-caixa-vaga caixa-icone"> <i class="fa-solid fa-briefcase"></i>
                     <h4>Para Empresas</h4>
                     <p>Sua empresa precisa de profissionais qualificados? Cadastre suas vagas conosco! Cuidamos de todo
                         o processo de triagem, trazendo os melhores talentos para o seu time. </p>
                     <a href="https://santannaagenciadeempregos.vercel.app/vagasempresas" target="_blank"
-                        class="card-link-apple">Cadastrar Vagas <i class="fa-solid fa-arrow-right-long"></i></a>
+                        class="link-cartao-apple">Cadastrar Vagas <i class="fa-solid fa-arrow-right-long"></i></a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Ecossistema Trampô Inteligente (IA e Tecnologia) -->
-    <section id="trampo" class="features-section" style="background-color: var(--white);">
-        <div class="container">
-            <div class="section-title reveal-up">
-                <div class="badge">Inovação e Deep Tech</div>
+    <section id="trampo" class="secao-diferenciais" style="background-color: var(--white);">
+        <div class="conteiner-principal">
+            <div class="titulo-secao revelar-acima">
+                <div class="etiqueta-destaque">Inovação e Deep Tech</div>
                 <h2>Trampô Inteligente</h2>
-                <p>Nossa plataforma exclusiva baseada em Inteligência Artificial para otimização extrema e triagem
-                    preditiva de candidatos.</p>
+                <p>Projeto de Inteligência Artificial em desenvolvimento pela Sant'Anna Agência de Empregos para conectar profissionais, empresas, instituições de ensino e oportunidades por meio do WhatsApp, 
+                    tornando o acesso ao emprego e à qualificação mais simples, inteligente e acessível.</p>
             </div>
-            <div class="trampo-features-grid reveal-up">
-                <div class="trampo-item">
+            <div class="grade-recursos-trampo revelar-acima">
+                <div class="item-trampo">
                     <h5>O Projeto</h5>
-                    <p>Uma solução de engenharia de software desenvolvida para automatizar cruzamentos de competências e
-                        fit cultural humano.</p>
+                    <p>O Trampô Inteligente é um projeto de inovação idealizado pela Sant'Anna Agência de Empregos para utilizar Inteligência Artificial como ferramenta de conexão entre profissionais, empresas,
+                         instituições de ensino, organizações sociais e oportunidades de desenvolvimento.</p></br>
+                    <p>A iniciativa surgiu a partir da experiência da Sant'Anna no mercado de recrutamento e seleção e da percepção de que milhares de pessoas utilizam diariamente o WhatsApp para buscar emprego, 
+                        cursos, qualificação profissional e oportunidades de crescimento.</p></br>
+                    <p>Atualmente, o Trampô Inteligente encontra-se em fase de desenvolvimento e validação, com o objetivo de criar uma solução acessível, inteligente e escalável para aproximar pessoas e oportunidades.</p></br>
+                    <p>Mais do que uma plataforma tecnológica, o Trampô Inteligente faz parte do ecossistema da Sant'Anna Agência de Empregos, ampliando a capacidade de conectar talentos, organizações e oportunidades 
+                        de forma eficiente.</p></br>
                 </div>
-                <div class="trampo-item">
+                <div class="item-trampo">
                     <h5>Como Funciona</h5>
-                    <p>Algoritmos neurais leem parâmetros técnicos de perfis e os comparam instantaneamente aos
-                        descritivos de cargos empresariais.</p>
-                </div>
-                <div class="trampo-item">
-                    <h5>Recursos</h5>
-                    <p>Mapeamento preditivo de turnover, filtros por proximidade geográfica e match instantâneo de
-                        soft/hard skills.</p>
-                </div>
-                <div class="trampo-item">
-                    <h5>Impacto Social</h5>
-                    <p>Inclusão produtiva digital focada na geração direta de renda em periferias urbanas e polos
-                        industriais de aceleração.</p>
-                </div>
-                <div class="trampo-item">
-                    <h5>StartupRS GO</h5>
-                    <p>Iniciativa chancelada e incubada pelo Sebrae RS para aceleração de soluções escaláveis de alto
-                        impacto.</p>
-                </div>
-                <div class="trampo-item">
-                    <h5>Programa Centelha</h5>
-                    <p>Chancelado e premiado pelo Governo Federal por sua profunda capacidade de desenvolvimento
-                        tecnológico aplicado.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                     <p>O Trampô Inteligente será acessado diretamente pelo WhatsApp.</p></br>
+                      <p>Ao iniciar uma conversa, o usuário poderá informar aquilo que procura, utilizando linguagem simples e natural.</p></br>
+                       <p>Exemplos:</p></br>
+                        <p>Estou procurando emprego.</p></br>
+                         <p>Quero uma vaga de cozinheiro.</p></br>
+                          <p>Procuro trabalho na área administrativa.</p></br>
+                           <p>Quero fazer um curso profissionalizante.</p></br>
+                            <p>Preciso melhorar meu currículo.</p></br>
+                            <p>Quero oportunidades perto da minha região.</p></br>
+                            <p>A Inteligência Artificial irá compreender a necessidade do usuário e apresentar informações compatíveis com seu perfil e interesse.</p></br>
+                            <p>O objetivo é transformar o WhatsApp em uma central inteligente de oportunidades, facilitando o acesso ao emprego, à qualificação profissional e ao desenvolvimento de carreira.</p>
+                            <p></p></br>
 
-    <!-- Trampô Podcast -->
-    <section id="podcast" class="podcast-section">
-        <div class="container">
-            <div class="section-title reveal-up">
-                <div class="badge">Mídia</div>
+                </div>
+                <div class="item-trampo">
+                    <h5>Recursos da Plataforma</h5>
+                    <p>Entre as funcionalidades previstas para o Trampô Inteligente estão:</p>
+                    <p>📌 Indicação de vagas de emprego compatíveis com o perfil do usuário;</p></br>
+                    <p>📌 Recomendação de cursos e capacitações;</p></br>
+                    <p>📌 Orientação para elaboração e melhoria de currículos;</p></br>
+                    <p>📌 Preparação para entrevistas de emprego;</p></br>
+                    <p>📌 Divulgação de programas de qualificação profissional;</p></br>
+                    <p>📌 Identificação de oportunidades próximas à localização do usuário;</p></br>
+                    <p>📌 Conexão com empresas, instituições de ensino e organizações parceiras;</p></br>
+                    <p>📌 Inteligência Artificial aplicada à empregabilidade e ao desenvolvimento profissional.</p></br>
+                    <p>As funcionalidades poderão ser ampliadas e aperfeiçoadas conforme a evolução do projeto.</p>
+                </div>   
+      </section>
+
+      <section class="reconhecimentos-trampo">
+    <h2 class="reconhecimentos-inteligente">Reconhecimentos do Trampô Inteligente</h2>
+    
+    <div class="trampo-2">
+        <div class="grade-recursos-trampo revelar-acima">
+            
+            <div class="item-trampo">
+                <h5>🤖 Trampô Inteligente</h5>
+                <p>Projeto de Inteligência Artificial em desenvolvimento pela Sant'Anna Agência de Empregos para conectar profissionais, empresas, instituições de ensino e oportunidades por meio do WhatsApp, tornando o acesso ao emprego e à qualificação mais simples, inteligente e acessível.</p>
+            </div>
+
+            <div class="item-trampo">
+                <h5>🏆 StartupRS GO – Gravataí</h5>
+                <p>Em janeiro de 2026, o Trampô Inteligente foi selecionado entre as 15 startups participantes do StartupRS GO – Gravataí, programa de pré-aceleração promovido pelo Sebrae RS em parceria com a Prefeitura Municipal de Gravataí.</p>
+            </div>
+
+            <div class="item-trampo">
+                <h5>💡 Validação e Potencial</h5>
+                <p>A seleção reconheceu o potencial inovador da proposta e proporcionou acesso a mentorias, capacitações e ferramentas para validação do modelo de negócio.</p>
+            </div>
+
+            <div class="item-trampo">
+                <h5>🏆 Programa Centelha</h5>
+                <p>O Trampô Inteligente também foi selecionado e classificado em 8º lugar no Programa Centelha, iniciativa promovida pelo MCTI, Finep, FAPERGS e instituições parceiras. O reconhecimento evidencia o potencial da solução para utilizar tecnologia, inteligência artificial e inovação.</p>
+            </div>
+
+            <div class="item-trampo">
+                <h5>🤝 Parceiros e Conexões</h5>
+                <p>O desenvolvimento conta com o apoio de instituições comprometidas com a inovação. Essas conexões fortalecem a credibilidade do projeto e demonstram o compromisso da Sant'Anna Agência de Empregos em investir continuamente no futuro da empregabilidade.</p>
+            </div>
+
+        </div> 
+    </div>    
+</section>
+
+
+    <section id="podcast" class="secao-podcast">
+        <div class="conteiner-principal">
+            <div class="titulo-secao revelar-acima">
+                <div class="etiqueta-destaque">Mídia</div>
                 <h2>Trampô Podcast</h2>
                 <p>Nossa central de debates corporativos transmitida via ondas de rádio e plataformas de streaming
                     digital.</p>
             </div>
-            <div class="podcast-grid reveal-up">
-                <div class="podcast-card-glass">
+            <div class="grade-podcast revelar-acima">
+                <div class="cartao-podcast-vidro">
                     <h4>Sobre o Podcast</h4>
                     <p>Espaço de discussão de mercado focado em aproximar as melhores práticas corporativas ao
                         ecossistema técnico local.</p>
                 </div>
-                <div class="podcast-card-glass">
+                <div class="cartao-podcast-vidro">
                     <h4>Episódios & Entrevistados</h4>
                     <p>Líderes de RH, executivos de indústrias, especialistas em tecnologia e referências em inovação
                         dividindo insights brutos.</p>
                 </div>
-                <div class="podcast-card-glass">
+                <div class="cartao-podcast-vidro">
                     <h4>Rádio Reação FM</h4>
                     <p>Distribuição expandida e transmissão integrada diretamente na programação oficial da emissora
                         parceira.</p>
                 </div>
-                <div class="podcast-card-glass">
+                <div class="cartao-podcast-vidro">
                     <h4>Seja um Convidado</h4>
                     <p>Compartilhe as estratégias de crescimento e as metodologias de gestão adotadas na sua
                         organização.</p>
-                    <a href="#contato" class="card-link-apple" style="margin-top: 10px;">Solicitar Participação <i
+                    <a href="#contato" class="link-cartao-apple" style="margin-top: 10px;">Solicitar Participação <i
                             class="fa-solid fa-arrow-right-long"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Central de Conteúdo -->
-    <section id="conteudo" class="content-hub-section">
-        <div class="container">
-            <div class="section-title reveal-up">
-                <div class="badge">Conhecimento</div>
-                <h2>Central de Conteúdo</h2>
-                <p>Artigos, notícias de mercado e insights estratégicos focados no desenvolvimento empresarial e
-                    recrutamento assertivo.</p>
+   <section id="conteudo" class="secao-central-conteudo">
+    <div class="conteiner-principal">
+        <div class="titulo-secao revelar-acima">
+            <div class="etiqueta-destaque">Conhecimento</div>
+            <h2>Central de Conteúdo</h2>
+            <p>Conhecimento, informação e experiências que conectam empresas, profissionais e oportunidades.</p>
+        </div>
+
+        <!-- TUDO fica aqui dentro agora -->
+        <div class="grade-categorias-conteudo revelar-acima">
+            
+            <div class="caixa-categoria-pilula">
+                <h5>Notícias da Agência</h5>
+                <p>Comunicados oficiais, parcerias firmadas e atualizações do nosso plano de expansão operacional.</p>
+            </div>
+            
+            <div class="caixa-categoria-pilula">
+                <h5>Sant'Anna na Mídia</h5>
+                <p>Confira entrevistas, reportagens e participações em veículos que destacam o trabalho da Sant'Anna.</p>
+                <p>Esta seção reúne conteúdos que evidenciam a atuação da agência e suas contribuições para a empregabilidade.</p>
+            </div>
+            
+            <div class="caixa-categoria-pilula">
+                <h5>Mercado de Trabalho</h5>
+                <p>Informações, tendências e análises sobre o cenário do emprego, profissões em alta e demandas das empresas.</p>
+                <p>O objetivo é ajudar a compreender as transformações do mercado e tomar decisões estratégicas.</p>
+            </div>
+            
+            <div class="caixa-categoria-pilula">
+                <h5>Conteúdo para Empresas</h5>
+                <p>Um espaço dedicado a empresários, gestores e RHs.</p>
+                <p><span class="check-verde">✓</span> Recrutamento e Seleção</p>
+                <p><span class="check-verde">✓</span> Gestão de Pessoas</p>
+                <p><span class="check-verde">✓</span> Liderança e Cultura</p>
+                <p style="margin-top: 15px;">O objetivo é apoiar a construção de equipes qualificadas.</p>
             </div>
 
-            <div class="content-categories-grid reveal-up">
-                <div class="category-pill-box">
-                    <h5>Notícias da Agência</h5>
-                    <p>Comunicados oficiais, parcerias firmadas e atualizações do nosso plano de expansão operacional.
-                    </p>
-                </div>
-                <div class="category-pill-box">
-                    <h5>Sant'Anna na Mídia</h5>
-                    <p>Nossas aparições, entrevistas e matérias veiculadas nos principais veículos de imprensa do país.
-                    </p>
-                </div>
-                <div class="category-pill-box">
-                    <h5>Mercado de Trabalho</h5>
-                    <p>Análises profundas de dados de empregabilidade, novas profissões e tendências salariais.</p>
-                </div>
-                <div class="category-pill-box">
-                    <h5>Conteúdo para Empresas</h5>
-                    <p>Guias de liderança, táticas de retenção de talentos e manuais práticos sobre mitigação de
-                        turnover.</p>
-                </div>
-                <div class="category-pill-box">
-                    <h5>Conteúdo para Candidatos</h5>
-                    <p>Estratégias de posicionamento profissional, aprimoramento curricular e preparação para
-                        entrevistas.</p>
-                </div>
-                <div class="category-pill-box">
-                    <h5>Cases de Sucesso</h5>
-                    <p>Resultados mensuráveis de corporações que aceleraram sua tração contratando através da Sant'Anna.
-                    </p>
-                </div>
+            <div class="caixa-categoria-pilula">
+                <h5>Conteúdo para Candidatos</h5>
+                <p>Área voltada para profissionais que buscam crescimento e novas oportunidades.</p>
+                <p><span class="check-verde">✓</span> Elaboração de Currículo</p>
+                <p><span class="check-verde">✓</span> Entrevistas de Emprego</p>
+                <p><span class="check-verde">✓</span> Desenvolvimento de Carreira</p>
+                <p style="margin-top: 15px;">O objetivo é ajudar candidatos a se prepararem para os desafios do mercado.</p>
+            </div>
+
+            <div class="caixa-categoria-pilula">
+                <h5>Cases de Sucesso</h5>
+                <p>Conheça resultados reais alcançados por empresas e profissionais através da Sant'Anna.</p>
+                <p>Histórias que comprovam a assertividade das nossas contratações e o compromisso com resultados.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Hub de Contato Final -->
-    <section id="contato" class="contact-hub-section">
-        <div class="container">
-            <div class="section-title reveal-up">
-                <div class="badge">Atendimento Canal Direto</div>
+    <section id="contato" class="secao-central-contato">
+        <div class="conteiner-principal">
+            <div class="titulo-secao revelar-acima">
+                <div class="etiqueta-destaque">Atendimento Canal Direto</div>
                 <h2>Inicie sua Parceria Estratégica</h2>
                 <p>Nossa equipe técnica e consultores comerciais estão de prontidão para desenhar seu plano operacional.
                 </p>
             </div>
 
-            <div class="contact-grid-options reveal-up">
-                <div class="contact-option-card">
+            <div class="grade-opcoes-contato revelar-acima">
+                <div class="cartao-opcao-contato">
                     <i class="fa-solid fa-file-invoice-dollar"></i>
                     <h4>Solicitar Orçamento</h4>
                     <p>Receba uma proposta comercial customizada ao volume de vagas e perfis demandados no seu plano
                         anual.</p>
                     <a href="https://wa.me/5551984867665?text=Olá, vim pelo site da Sant'Anna Agência de Empregos! Gostaria de mais informações.
-                    " target="_blank" class="btn-grid-main" style="margin-top: 15px; max-width: 100%;">Requisitar
+                    " target="_blank" class="botao-grade-principal" style="margin-top: 15px; max-width: 100%;">Requisitar
                         Proposta</a>
                 </div>
 
-                <div class="contact-option-card">
+                <div class="cartao-opcao-contato">
                     <i class="fa-solid fa-headset"></i>
                     <h4>Falar com um Especialista</h4>
                     <p>Agende uma reunião consultiva rápida para mapeamento preliminar de dores e alinhamento de
                         processos seletivos.</p>
                     <a href="https://wa.me/5551984867665?text=Olá, vim pelo site da Sant'Anna Agência de Empregos! Gostaria de agendar uma reunião com um especialista."
-                        target="_blank" class="btn-grid-main" style="margin-top: 15px; max-width: 100%;">Agendar
+                        target="_blank" class="botao-grade-principal" style="margin-top: 15px; max-width: 100%;">Agendar
                         Reunião</a>
                 </div>
             </div>
@@ -756,18 +873,16 @@
 
     </section>
 
-    <!-- Footer CoreCode -->
     <footer>
-        <p>&copy; 2026 <a href="https://corecodetech.github.io/corecodepro/" target="_blank"
+        <p>&copy; 2026 <a href="https://corecodetech.github.io/corecodepro/" target="_bla
+            nk"
                 rel="noopener noreferrer">Corecode</a>. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Scripts de Framework de Animação Avançada -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
 
-    <!-- VLibras Widget -->
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
@@ -778,6 +893,36 @@
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
+    <script>
+    // Seleciona os elementos do menu interno
+    const alternadorMenu = document.querySelector('.alternador-menu-mobile');
+    const menuNavegacao = document.querySelector('.menu-navegacao');
+    const linksMenu = document.querySelectorAll('.menu-navegacao a');
+
+    // Executa a função ao clicar no botão hamburguer
+    alternadorMenu.addEventListener('click', () => {
+        alternadorMenu.classList.toggle('ativo');
+        menuNavegacao.classList.toggle('ativo');
+    });
+
+    // Fecha o menu automaticamente se o usuário clicar em um link interno
+    linksMenu.forEach(link => {
+        link.addEventListener('click', () => {
+            alternadorMenu.classList.remove('ativo');
+            menuNavegacao.classList.remove('ativo');
+        });
+    });
+
+    // Controla a mudança visual do cabeçalho ao rolar a página
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('barra-rolada');
+        } else {
+            header.classList.remove('barra-rolada');
+        }
+    });
+</script>
 </body>
 
 </html>
