@@ -483,6 +483,8 @@ header.barra-rolada .alternador-menu-mobile .barra-interna {
     width: max-content;
     align-items: center;
     gap: 60px;
+    /* ADICIONADO: Linha que ativa o movimento infinito (30 segundos) */
+    animation: deslizar-carrossel 30s linear infinite;
 }
 
 .slide-carrossel {
@@ -490,6 +492,8 @@ header.barra-rolada .alternador-menu-mobile .barra-interna {
     align-items: center;
     justify-content: center;
     width: 140px;
+    /* ADICIONADO: Evita que o flexbox encolha as caixas das imagens */
+    flex-shrink: 0; 
 }
 
 .slide-carrossel img {
@@ -503,6 +507,16 @@ header.barra-rolada .alternador-menu-mobile .barra-interna {
 
 .slide-carrossel img:hover {
     filter: grayscale(0%) opacity(100%);
+}
+
+/* ADICIONADO: A regra de animação que faz o efeito acontecer */
+@keyframes deslizar-carrossel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* --- História e Quem Somos --- */
