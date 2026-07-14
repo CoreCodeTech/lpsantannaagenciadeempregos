@@ -3,18 +3,13 @@
     --primary-color: #5d24b3;
     --accent-color: #c084fc;
     --dark-bg: #000000;
-    /* Preto Absoluto da Apple para contrastes puros */
     --text-color: #1d1d1f;
-    /* Tipografia oficial cinza ultra-escuro Apple */
     --text-muted: #86868b;
-    /* Subtextos oficiais Apple */
-    --bg-light: #f5f5f7;
-    /* Fundo cinza claro clássico de páginas do Mac/iPhone */
+    --bg-light: #f4f5f7;
     --white: #ffffff;
     --apple-blur: saturate(180%) blur(20px);
     --font-main: 'Plus Jakarta Sans', sans-serif;
     --transition-apple: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    /* Curva de animação nativa iOS */
 }
 
 /* --- Resets Gerais --- */
@@ -24,35 +19,77 @@
     box-sizing: border-box;
     font-family: var(--font-main);
     letter-spacing: -0.022em;
-    /* Calibração de leitura Apple */
 }
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--bg-light);
+    background-color: var(--white);
 }
 
 body {
-    background-color: var(--bg-light);
+    background-color: var(--white);
     color: var(--text-color);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    /* Renderização de fonte sub-pixel fina */
 }
 
-.animate-text {
+/* Garante que todo texto corrido do site fique devidamente justificado */
+p, span, .cartao-institucional p, .cartao-premio p, .cartao-servico-vidro p, 
+.item-checagem span, .cartao-metodologia p, .cartao-caixa-vaga p, 
+.item-trampo p, .cartao-podcast-vidro p, .caixa-categoria-pilula p, 
+.cartao-opcao-contato p, .texto-estendido-sobre p {
+    text-align: justify !important;
+    text-justify: inter-word;
+}
+
+.texto-animado {
     color: var(--accent-color) !important;
 }
 
-.container {
+/* --- CONTAINER E CARROSSEL DE EMPRESAS --- */
+.carrossel-empresas-conteiner {
+    overflow: hidden;
     width: 100%;
-    margin: 0 auto;
-    padding: 0 70px;
+    position: relative;
+    margin: 30px 0; /* Padronizado */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
+.carrossel-empresas-trilho {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: max-content;
+    animation: deslizar-empresas 20s linear infinite;
+}
+
+.carrossel-empresas-trilho:hover {
+    animation-play-state: paused;
+}
+
+.slide-empresa {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+}
+
+.slide-empresa img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+@keyframes deslizar-empresas {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 25px)); }
+}
 
 /* --- Elemento de Marca Flutuante Avançado --- */
-.floating-logo-balloon {
+.balao-logo-flutuante {
     position: fixed;
     bottom: 30px;
     left: 30px;
@@ -70,14 +107,14 @@ body {
     transition: var(--transition-apple);
 }
 
-.floating-logo-balloon img {
+.balao-logo-flutuante img {
     width: 44px;
     height: 44px;
     object-fit: contain;
     border-radius: 50%;
 }
 
-.floating-logo-balloon:hover {
+.balao-logo-flutuante:hover {
     transform: scale(1.08) translateY(-4px);
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 12px 40px rgba(93, 36, 179, 0.2);
@@ -91,11 +128,14 @@ header {
     width: 100%;
     z-index: 1000;
     transition: var(--transition-apple);
-    padding: 22px 0;
+    padding: 22px 20px;
     background: rgb(0, 0, 0);
 }
 
-.logo a {
+.logotipo a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--white);
@@ -103,35 +143,46 @@ header {
     transition: var(--transition-apple);
 }
 
-.logo a span {
+.logotipo a span {
     color: var(--accent-color);
 }
 
-/* Estado Ativado no Scroll (Efeito Puro Apple Store) */
-header.scrolled {
-    padding: 12px 0;
+.imagem-logo-barra {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition-apple);
+    vertical-align: middle;
+    border-radius: 15px;
+}
+
+header.barra-rolada {
+    padding: 12px 20px;
     background: rgba(255, 255, 255, 0.72);
     backdrop-filter: var(--apple-blur);
     -webkit-backdrop-filter: var(--apple-blur);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-header.scrolled .logo a {
+header.barra-rolada .logotipo a {
     color: var(--dark-bg);
 }
 
-header.scrolled .logo a span {
+header.barra-rolada .logotipo a span {
     color: var(--primary-color);
 }
 
-.nav-container {
+header.barra-rolada .imagem-logo-barra {
+    height: 26px;
+}
+
+.conteiner-navegacao {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Menu Mobile Overlay */
-.nav-menu {
+.menu-navegacao {
     position: fixed;
     top: 0;
     right: -100%;
@@ -148,11 +199,11 @@ header.scrolled .logo a span {
     z-index: 999;
 }
 
-.nav-menu.active {
+.menu-navegacao.ativo {
     right: 0;
 }
 
-.nav-menu ul {
+.menu-navegacao ul {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -162,7 +213,7 @@ header.scrolled .logo a span {
     text-align: center;
 }
 
-.nav-menu a {
+.menu-navegacao a {
     text-decoration: none;
     color: #e8e8ed;
     font-size: 1.1rem;
@@ -170,13 +221,12 @@ header.scrolled .logo a span {
     transition: color 0.3s;
 }
 
-.nav-menu a:hover,
-.nav-menu a.active {
+.menu-navegacao a:hover,
+.menu-navegacao a.ativo {
     color: var(--accent-color);
 }
 
-/* Botão Menu Hamburguer Linhas Finas */
-.menu-toggle {
+.alternador-menu-mobile {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -188,58 +238,57 @@ header.scrolled .logo a span {
     z-index: 1001;
 }
 
-.menu-toggle .bar {
+.alternador-menu-mobile .barra-interna {
     width: 100%;
     height: 1.5px;
     background-color: var(--white);
     transition: var(--transition-apple);
 }
 
-header.scrolled .menu-toggle .bar {
+header.barra-rolada .alternador-menu-mobile .barra-interna {
     background-color: var(--dark-bg);
 }
 
-.menu-toggle.active .bar:nth-child(1) {
+.alternador-menu-mobile.ativo .barra-interna:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
     background-color: var(--white) !important;
 }
 
-.menu-toggle.active .bar:nth-child(2) {
+.alternador-menu-mobile.ativo .barra-interna:nth-child(2) {
     opacity: 0;
 }
 
-.menu-toggle.active .bar:nth-child(3) {
+.alternador-menu-mobile.ativo .barra-interna:nth-child(3) {
     transform: translateY(-6.5px) rotate(-45deg);
     background-color: var(--white) !important;
 }
 
 /* --- Hero Section Imersiva --- */
-.hero-section-grid {
+.secao-hero-grade {
     position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 80px;
+    padding: 80px 20px 40px; 
     text-align: center;
     overflow: hidden;
     background-color: var(--dark-bg);
 }
 
-.hero-bg-zoom {
+.hero-fundo-zoom {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
-        url('img/logo.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('img/logo.png');
     background-position: center;
     transform: scale(1);
     z-index: 0;
 }
 
-.hero-grid-overlay {
+.hero-camada-grade {
     position: absolute;
     top: 0;
     left: 0;
@@ -249,18 +298,18 @@ header.scrolled .menu-toggle .bar {
     z-index: 1;
 }
 
-.hero-grid-container {
+.hero-conteiner-grade {
     position: relative;
     z-index: 2;
 }
 
-.hero-grid-content {
+.hero-conteudo-grade {
     max-width: 850px;
     margin: 0 auto;
 }
 
-.hero-grid-content .badge,
-.badge {
+.hero-conteudo-grade .etiqueta-destaque,
+.etiqueta-destaque {
     display: inline-block;
     padding: 15px 17px;
     background: rgba(93, 36, 179, 0.12);
@@ -272,7 +321,7 @@ header.scrolled .menu-toggle .bar {
     margin-bottom: 24px;
 }
 
-.hero-grid-content .badge {
+.hero-conteudo-grade .etiqueta-destaque {
     background: rgba(255, 255, 255, 0.1);
     color: #f5f5f7;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -280,7 +329,7 @@ header.scrolled .menu-toggle .bar {
     -webkit-backdrop-filter: var(--apple-blur);
 }
 
-.hero-grid-content h1 {
+.hero-conteudo-grade h1 {
     font-size: 2.2rem;
     font-weight: 800;
     line-height: 1.2;
@@ -288,7 +337,7 @@ header.scrolled .menu-toggle .bar {
     color: var(--white);
 }
 
-.hero-grid-content p {
+.hero-conteudo-grade p {
     font-size: 1.1rem;
     color: #a1a1a6;
     line-height: 1.6;
@@ -298,14 +347,14 @@ header.scrolled .menu-toggle .bar {
     margin-right: auto;
 }
 
-.hero-grid-actions {
+.hero-botoes-acao {
     display: flex;
     flex-direction: column;
     gap: 14px;
     align-items: center;
 }
 
-.btn-grid-main {
+.botao-grade-principal {
     text-decoration: none;
     background-color: var(--white);
     color: var(--dark-bg);
@@ -320,84 +369,96 @@ header.scrolled .menu-toggle .bar {
     box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
 }
 
-.btn-grid-main:hover {
+.botao-grade-principal:hover {
     background-color: #e8e8ed;
     transform: scale(1.02) translateY(-2px);
 }
 
-/* --- Seção de Resultados e Indicadores --- */
-.results-bar-section {
-    padding: 100px 0;
+/* --- PADRONIZAÇÃO DE SEÇÕES GERAIS (NOVO PADDING) --- */
+.secao-barra-resultados,
+.nossa-historia-2,
+.secao-sobre-nos,
+.secao-passos-metodologia,
+.secao-empresas-confiam,
+.secao-vagas-vidro,
+.secao-diferenciais,
+.secao-podcast, 
+.secao-central-conteudo, 
+.secao-central-contato {
+    padding: 70px 20px; /* Reduzido de 120px/100px para padronizar e evitar buracos brancos */
     background-color: var(--white);
 }
 
-.results-title {
+/* --- Títulos das Seções Padronizados --- */
+.titulo-resultados,
+.titulo-secao {
     text-align: center;
     max-width: 750px;
-    margin: 0 auto 50px;
+    margin: 0 auto 40px; /* Reduzido de 60px/50px para 40px */
 }
 
-.results-title h3 {
+.titulo-resultados h3,
+.titulo-secao h2,
+.conteudo-sobre h2 {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 16px;
     color: var(--dark-bg);
 }
 
-.results-title p {
+.titulo-resultados p,
+.titulo-secao p {
     color: var(--text-muted);
     font-size: 0.98rem;
     line-height: 1.6;
 }
 
-.results-counter-grid {
+/* --- Contadores --- */
+.grade-contadores-resultados {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 50px; /* Reduzido de 80px */
 }
 
-.counter-item h2 {
+.item-contador h2 {
     font-size: 2.8rem;
     font-weight: 800;
     color: var(--primary-color);
     margin-bottom: 8px;
 }
 
-.counter-item p {
+.item-contador p {
     font-size: 0.95rem;
     color: var(--text-muted);
     font-weight: 500;
 }
 
-/* --- NOVO CARROSSEL INFINITO (Estilo Apple Partners Carrossel) --- */
-.authority-banner {
+/* --- Banner Autoridade --- */
+.banner-autoridade {
     border-top: 1px solid rgba(0, 0, 0, 0.06);
-    padding-top: 50px;
+    padding-top: 40px;
     text-align: center;
 }
 
-.authority-banner h4 {
+.banner-autoridade h4 {
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-muted);
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     padding: 0 10px;
 }
 
-.logo-carousel-container {
+.carrossel-logos-conteiner {
     overflow: hidden;
     width: 100%;
     position: relative;
     padding: 10px 0;
 }
 
-
-
-/* Gradientes de mascaramento laterais para dar sensação de sumiço suave igual da Apple */
-.logo-carousel-container::before,
-.logo-carousel-container::after {
+.carrossel-logos-conteiner::before,
+.carrossel-logos-conteiner::after {
     content: "";
     height: 100%;
     position: absolute;
@@ -407,31 +468,31 @@ header.scrolled .menu-toggle .bar {
     pointer-events: none;
 }
 
-.logo-carousel-container::before {
-    left: 0;
+.carrossel-logos-conteiner::before {
     background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    left: 0;
 }
 
-.logo-carousel-container::after {
-    right: 0;
+.carrossel-logos-conteiner::after {
     background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    right: 0;
 }
 
-.logo-carousel-track {
+.carrossel-logos-trilho {
     display: flex;
     width: max-content;
     align-items: center;
     gap: 60px;
 }
 
-.carousel-slide {
+.slide-carrossel {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 140px;
 }
 
-.carousel-slide img {
+.slide-carrossel img {
     max-width: 100%;
     height: auto;
     max-height: 50px;
@@ -440,39 +501,50 @@ header.scrolled .menu-toggle .bar {
     border-radius: 10px;
 }
 
-.carousel-slide img:hover {
+.slide-carrossel img:hover {
     filter: grayscale(0%) opacity(100%);
 }
 
-/* --- Seção Quem Somos (Reestruturada) --- */
-.about-section {
-    padding: 120px 0;
-    background-color: var(--bg-light);
+/* --- História e Quem Somos --- */
+.card-historia {
+    background-color: #f4f5f7;
+    border-radius: 24px;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: var(--transition-apple);
 }
 
-.about-main-grid {
+.card-historia:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+.grade-principal-sobre {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 20px;
     align-items: center;
     margin-bottom: 40px;
 }
 
-.about-image-box {
+.caixa-imagem-sobre {
     position: relative;
     width: 100%;
     max-width: 440px;
     margin: 0 auto;
 }
 
-.profile-img {
+.imagem-perfil {
     width: 100%;
     height: auto;
     border-radius: 24px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
-.about-experience-badge {
+.etiqueta-experiencia-sobre {
     position: absolute;
     bottom: -15px;
     right: -10px;
@@ -483,165 +555,154 @@ header.scrolled .menu-toggle .bar {
     box-shadow: 0 8px 24px rgba(93, 36, 179, 0.25);
 }
 
-.about-experience-badge h4 {
+.etiqueta-experiencia-sobre h4 {
     font-size: 0.85rem;
     font-weight: 600;
 }
 
-.about-content h2 {
-    font-size: 1.8rem;
+.reconhecimentos-inteligente {
+    font-size: 2.2rem;
     font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
     color: var(--dark-bg);
+    text-align: center;
 }
 
-.about-content p,
-.about-extended-text p {
+.conteudo-sobre p,
+.texto-estendido-sobre p {
     color: var(--text-muted);
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 18px;
+    text-align: justify;
 }
 
-
-.institutional-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+.grade-institucional {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
-    margin-bottom: 80px;
+    margin: 0 auto 50px; /* Reduzido de 80px */
+    max-width: 1200px;
 }
 
-.inst-card {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 30px;
-    border: 1px solid rgba(0, 0, 0, 0.02);
+.cartao-institucional {
+    width: 100%;
+    min-width: unset;
+    background-color: #f4f5f7; 
+    border-radius: 24px;
+    padding: 30px; 
+    border: 1px solid #e5e7eb; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: var(--transition-apple);
 }
 
-.inst-card i {
+.cartao-institucional:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+.cartao-institucional i {
     font-size: 1.6rem;
     color: var(--primary-color);
     margin-bottom: 16px;
 }
 
-.inst-card h4 {
+.cartao-institucional h4 {
     font-size: 1.15rem;
     margin-bottom: 10px;
     color: var(--dark-bg);
 }
 
-.inst-card p {
+.cartao-institucional p {
     font-size: 0.92rem;
     color: var(--text-muted);
     line-height: 1.5;
 }
 
-/* --- Bloco Interno de Prêmios e Reconhecimentos --- */
-.awards-container {
-    padding-top: 40px;
+/* --- Prêmios --- */
+.conteiner-premios {
+    padding-top: 20px; /* Reduzido */
 }
 
-.awards-grid {
+.grade-premios {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
-    margin-top: 40px;
+    margin-top: 30px; /* Reduzido */
 }
 
-.award-card {
-    background: var(--white);
+.cartao-premio {
+    background-color: #f4f5f7;
     border-radius: 20px;
     padding: 32px;
-    border: 1px solid rgba(0, 0, 0, 0.02);
+    border: 1px solid #e5e7eb;
     transition: var(--transition-apple);
 }
 
-.award-card:hover {
+.cartao-premio:hover {
     transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
 }
 
-.award-trophy {
+.trofeu-premio {
     font-size: 2rem;
     display: block;
     margin-bottom: 16px;
 }
 
-.award-card h4 {
+.cartao-premio h4 {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--dark-bg);
     margin-bottom: 10px;
 }
 
-.award-card p {
+.cartao-premio p {
     font-size: 0.92rem;
     color: var(--text-muted);
     line-height: 1.6;
 }
 
-/* --- Seção de Serviços / Soluções --- */
-.services-section {
-    padding: 120px 0;
-}
-
-.section-title {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 60px;
-}
-
-.section-title h2 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 14px;
-    color: var(--dark-bg);
-}
-
-.section-title p {
-    color: var(--text-muted);
-    font-size: 0.98rem;
-}
-
-.services-grid {
+/* --- Serviços --- */
+.grade-servicos {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
 }
 
-.service-card-glass {
-    background: var(--white);
-    border: 1px solid rgba(0, 0, 0, 0.02);
+.cartao-servico-vidro {
+    background-color: #f4f5f7;
+    border: 1px solid #e5e7eb;
     border-radius: 24px;
-    padding: 40px;
+    padding: 30px 20px; /* Ajustado */
     transition: var(--transition-apple);
 }
 
-.service-card-glass:hover {
+.cartao-servico-vidro:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
 }
 
-.icon-box i {
+.caixa-icone i {
     font-size: 1.8rem;
     color: var(--primary-color);
     margin-bottom: 20px;
 }
 
-.services-grid h3 {
+.grade-servicos h3 {
     font-size: 1.35rem;
     margin-bottom: 12px;
     color: var(--dark-bg);
 }
 
-.service-card-glass p {
+.cartao-servico-vidro p {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
-.card-link-apple {
+.link-cartao-apple {
     color: var(--primary-color);
     font-weight: 500;
     display: inline-flex;
@@ -650,70 +711,107 @@ header.scrolled .menu-toggle .bar {
     font-size: 0.95rem;
 }
 
-.card-link-apple i {
+.link-cartao-apple i {
     font-size: 0.8rem;
     transition: transform 0.3s;
 }
 
-.card-link-apple:hover i {
+.link-cartao-apple:hover i {
     transform: translateX(4px);
 }
 
-/* --- Seção Checklist Diferenciais --- */
-.features-section {
-    padding: 120px 0;
-    background-color: var(--white);
+/* --- Checklist Diferenciais --- */
+.check-verde {
+    color: #10b981;
+    font-weight: bold;
+    margin-right: 6px;
 }
 
-.checklist-wrapper {
+.caixa-categoria-pilula p {
+    margin-bottom: 8px;
+}
+
+.bloco-lista-checagem {
     max-width: 800px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px; /* Ajustado */
 }
 
-.check-item {
+.item-checagem {
     display: flex;
     align-items: flex-start;
     gap: 16px;
     padding: 14px;
-    background: var(--bg-light);
+    background-color: #f4f5f7;
     border-radius: 14px;
+    transition: var(--transition-apple);
 }
 
-.check-item i {
+.item-checagem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+}
+
+.item-checagem i {
     color: #25D366;
     font-size: 1.1rem;
     margin-top: 3px;
 }
 
-.check-item span {
+.item-checagem span {
     font-size: 0.98rem;
     color: var(--text-color);
     line-height: 1.5;
 }
 
-/* --- Seção de Metodologia em Cards --- */
-.steps-section {
-    padding: 120px 0;
-}
-
-.methodology-timeline {
+/* --- Metodologia --- */
+.linha-tempo-metodologia {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
 }
 
-.methodology-card {
-    background: var(--white);
-    padding: 36px;
+.cartao-metodologia {
+    background-color: #f4f5f7;
     border-radius: 24px;
-    position: relative;
-    border: 1px solid rgba(0, 0, 0, 0.01);
+    max-width: 900px;
+    margin: 0 auto 40px; /* Reduzido de 60px */
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    padding: 30px 20px; /* Ajustado */
+    transition: var(--transition-apple);
 }
 
-.card-step-num {
+.cartao-metodologia:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+    
+.grade-categorias-conteudo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px; /* Reduzido */
+    margin-top: 30px; /* Reduzido */
+}
+
+.caixa-categoria-pilula {
+    background-color: #f4f5f7;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-apple);
+}
+
+.caixa-categoria-pilula:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+.numero-passo-cartao {
     font-size: 2.8rem;
     font-weight: 800;
     color: var(--primary-color);
@@ -723,7 +821,7 @@ header.scrolled .menu-toggle .bar {
     opacity: 0.3;
 }
 
-.methodology-card h4 {
+.cartao-metodologia h4 {
     font-size: 1.15rem;
     font-weight: 700;
     color: var(--dark-bg);
@@ -732,7 +830,7 @@ header.scrolled .menu-toggle .bar {
     z-index: 2;
 }
 
-.methodology-card p {
+.cartao-metodologia p {
     font-size: 0.92rem;
     color: var(--text-muted);
     line-height: 1.5;
@@ -740,103 +838,48 @@ header.scrolled .menu-toggle .bar {
     z-index: 2;
 }
 
-/* --- SEÇÃO CARROSSEL EMPRESAS QUE CONFIAM --- */
-.trust-companies-section {
-    padding: 120px 0;
-    background-color: var(--white);
-}
-
-.companies-carousel-container {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-    margin: 50px 0;
-}
-
-.companies-carousel-container::before,
-.companies-carousel-container::after {
-    content: "";
-    height: 100%;
-    position: absolute;
-    width: 120px;
-    z-index: 2;
-    top: 0;
-    pointer-events: none;
-}
-
-.companies-carousel-container::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-.companies-carousel-container::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-.companies-carousel-track {
-    display: flex;
-    width: max-content;
-    align-items: center;
-    gap: 80px;
-}
-
-.company-slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 150px;
-}
-
-.company-slide img {
-    max-width: 100%;
-    height: auto;
-    max-height: 70px;
-    object-fit: contain;
-    border-radius: 10px;
-}
-
-.trust-footer-text {
+/* --- Rodapé Confiança --- */
+.texto-rodape-confianca {
     text-align: center;
     max-width: 700px;
     margin: 30px auto 0;
 }
 
-.trust-footer-text p {
+.texto-rodape-confianca p {
     font-size: 0.98rem;
     color: var(--text-muted);
     line-height: 1.6;
 }
 
 /* --- Hub de Vagas Ativas --- */
-.vagas-section-glass {
-    padding: 120px 0;
-}
-
-.vagas-action-grid {
+.grade-acao-vagas {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
-    width: 70%;
-    margin: 0 auto 60px;
+    width: 100%;
+    margin: 0 auto 40px; /* Reduzido de 60px */
 }
 
-
-.vaga-box-card {
-    background: var(--white);
+.cartao-caixa-vaga {
+    background-color: #f4f5f7;
     border-radius: 22px;
-    padding: 35px;
-    border: 1px solid rgba(0, 0, 0, 0.02);
-
+    padding: 30px 20px; /* Ajustado */
+    border: 1px solid #e5e7eb;
+    transition: var(--transition-apple);
 }
 
-.vaga-box-card h4 {
+.cartao-caixa-vaga:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+.cartao-caixa-vaga h4 {
     font-size: 1.2rem;
     color: var(--dark-bg);
     margin-bottom: 10px;
 }
 
-.vaga-box-card p {
+.cartao-caixa-vaga p {
     font-size: 0.92rem;
     color: var(--text-muted);
     line-height: 1.5;
@@ -844,104 +887,100 @@ header.scrolled .menu-toggle .bar {
 }
 
 /* --- Grid Interna Trampô Inteligente --- */
-.trampo-features-grid {
+.grade-recursos-trampo {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
 }
 
-.trampo-item {
-    background: var(--bg-light);
-    padding: 26px;
-    border-radius: 18px;
+.item-trampo {
+    background-color: #f4f5f7;
+    border-radius: 24px; 
+    padding: 30px 20px; /* Ajustado */
+    max-width: 900px; 
+    margin: 0 auto; 
+    border: 1px solid #e5e7eb; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: var(--transition-apple);
 }
 
-.trampo-item h5 {
+.item-trampo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+.item-trampo h5 {
     font-size: 1.05rem;
     color: var(--dark-bg);
     margin-bottom: 8px;
 }
 
-.trampo-item p {
+.item-trampo p {
     font-size: 0.9rem;
     color: var(--text-muted);
     line-height: 1.5;
 }
 
-/* --- Seções Adicionais e Podcast --- */
-.podcast-section,
-.content-hub-section,
-.contact-hub-section {
-    padding: 120px 0;
-}
-
-.podcast-grid,
-.content-categories-grid {
+/* --- Podcast e Contato --- */
+.grade-podcast, 
+.grade-opcoes-contato {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
 }
 
-.podcast-card-glass,
-.category-pill-box,
-.contact-option-card {
-    background: var(--white);
-    padding: 35px;
+.cartao-podcast-vidro, 
+.cartao-opcao-contato {
+    background-color: #f4f5f7;
+    padding: 30px 20px; /* Ajustado */
     border-radius: 22px;
-    border: 1px solid rgba(0, 0, 0, 0.01);
+    border: 1px solid #e5e7eb;
+    transition: var(--transition-apple);
+    text-align: center;
 }
 
-.podcast-card-glass h4,
-.category-pill-box h5,
-.contact-option-card h4 {
+.cartao-podcast-vidro:hover,
+.cartao-opcao-contato:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+.cartao-podcast-vidro h4, 
+.caixa-categoria-pilula h5, 
+.cartao-opcao-contato h4 {
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: var(--dark-bg);
 }
 
-.podcast-card-glass p,
-.category-pill-box p,
-.contact-option-card p {
+.cartao-podcast-vidro p, 
+.caixa-categoria-pilula p, 
+.cartao-opcao-contato p {
     font-size: 0.92rem;
     color: var(--text-muted);
     line-height: 1.5;
-    padding-bottom: 30px;
+    padding-bottom: 20px; /* Reduzido */
 }
 
-/* --- Seção de Contato Customizada --- */
-.contact-hub-section {
-    background-color: var(--white);
-}
-
-
-
-.contact-grid-options {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
+.grade-opcoes-contato {
     max-width: 900px;
-    margin: 0 auto 50px;
+    margin: 0 auto 40px; /* Reduzido de 50px */
 }
 
-.contact-option-card {
-    background: var(--bg-light);
-    text-align: center;
-}
-
-.contact-option-card i {
+.cartao-opcao-contato i {
     font-size: 2rem;
     color: var(--primary-color);
     margin-bottom: 16px;
 }
 
-.social-footer-links {
+.links-redes-rodape {
     display: flex;
     justify-content: center;
     gap: 30px;
     margin-top: 30px;
 }
 
-.social-footer-links a {
+.links-redes-rodape a {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: 600;
@@ -973,138 +1012,121 @@ footer p a {
 footer p a:hover {
     color: #2997ff;
 }
-@media (max-width: 768px) {
-    .vagas-action-grid {
-        width: 100%;
-    }
 
-    .pl-2 {
-        place-items: center;
-    }
-}
-
-/* --- Media Queries Dinâmicas (Aceleração Responsiva e Grades Computadas) --- */
+/* --- Media Queries Dinâmicas --- */
 @media (min-width: 768px) {
-    
-
-    .hero-grid-content h1 {
-        font-size: 3.5rem;
+    /* Padding e Margens em Desktop aumentam sutilmente mas ficam contidos */
+    .secao-barra-resultados,
+    .nossa-historia-2,
+    .secao-sobre-nos,
+    .secao-passos-metodologia,
+    .secao-empresas-confiam,
+    .secao-vagas-vidro,
+    .secao-diferenciais,
+    .secao-podcast, 
+    .secao-central-conteudo, 
+    .secao-central-contato {
+        padding: 90px 20px; /* Ajuste suave para desktop */
     }
 
-    .hero-grid-actions {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .results-counter-grid {
-        grid-template-columns: repeat(3, 1fr);
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    .results-counter-grid {
-        grid-template-columns: repeat(4, 1fr);
-        width: 80%;
-        margin: 0 auto;
-
-    }
-
-    .about-main-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .institutional-grid,
-    .vagas-action-grid,
-    .contact-grid-options {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .awards-grid,
-    .podcast-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .methodology-timeline {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .trampo-features-grid,
-    .content-categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 992px) {
-
-    .container {
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 25px;
-    }
-
-    .nav-menu {
+    .menu-navegacao {
         position: static;
         width: auto;
         height: auto;
-        background-color: transparent;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-        display: block;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        display: flex !important;
+        right: 0;
     }
 
-    .nav-menu ul {
+    .menu-navegacao ul {
         flex-direction: row;
-        gap: 18px;
+        gap: 20px;
         padding: 0;
     }
 
-    .nav-menu a {
-        color: #f5f5f7;
-        font-size: 0.82rem;
-        font-weight: 400;
-        opacity: 0.8;
+    .menu-navegacao a {
+        font-size: 1rem;
+        color: #e8e8ed;
     }
 
-    .nav-menu a:hover,
-    .nav-menu a.active {
-        opacity: 1;
-        color: var(--primary-color);
+    .hero-conteudo-grade h1 {
+        font-size: 3.5rem;
     }
-
-    header.scrolled .nav-menu a {
-        color: var(--primary-color);
+    .hero-botoes-acao {
+        flex-direction: row;
+        justify-content: center;
     }
-
-    header.scrolled .nav-menu a:hover,
-    header.scrolled .nav-menu a.active {
-        color: var(--primary-color);
-        opacity: 1;
+    .grade-contadores-resultados {
+        grid-template-columns: repeat(4, 1fr);
+        width: 80%;
+        margin: 0 auto;
     }
-
-    .menu-toggle {
-        display: none;
+    .grade-principal-sobre {
+        grid-template-columns: 1fr 1fr;
     }
-
-    .services-grid {
+    .grade-acao-vagas {
+        width: 70%;
+    }
+    .grade-acao-vagas, 
+    .grade-opcoes-contato {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .awards-grid {
+    .grade-premios, 
+    .grade-podcast {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    header.barra-rolada .menu-navegacao a {
+        color: var(--dark-bg);
+    }
+    header.barra-rolada .menu-navegacao a:hover, 
+    header.barra-rolada .menu-navegacao a.ativo {
+        color: var(--primary-color);
+        opacity: 1;
+    }
+    .alternador-menu-mobile {
+        display: none;
+    }
+    .grade-servicos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grade-premios {
         grid-template-columns: repeat(3, 1fr);
     }
-
-    .methodology-timeline {
+    .linha-tempo-metodologia {
         grid-template-columns: repeat(4, 1fr);
     }
-
-    .trampo-features-grid,
-    .content-categories-grid {
+    .grade-recursos-trampo, 
+    .grade-categorias-conteudo {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .cartao-institucional {
+        width: 30%;
+    }
+    .card-historia {
+        padding: 50px 50px;
+    }
+    .item-trampo {
+        padding: 40px;
+    }
+    .cartao-metodologia {
+        padding: 40px;
+    }
+    .cartao-servico-vidro {
+        padding: 40px;
+    }
+    .cartao-caixa-vaga {
+        padding: 35px;
+    }
+    .cartao-podcast-vidro, 
+    .cartao-opcao-contato {
+        padding: 35px;
     }
 }
 
-/* --- Botão Flutuante do WhatsApp (Estilo Apple Glassmorphism) --- */
-.floating-whatsapp-balloon {
+/* --- Botão Flutuante do WhatsApp --- */
+.balao-whatsapp-flutuante {
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -1125,88 +1147,57 @@ footer p a:hover {
     animation: whatsappPulse 3s infinite ease-in-out;
 }
 
-.floating-whatsapp-balloon i {
+.balao-whatsapp-flutuante i {
     color: #25D366;
     font-size: 1.8rem;
     transition: var(--transition-apple);
 }
 
-.floating-whatsapp-balloon:hover {
+.balao-whatsapp-flutuante:hover {
     transform: scale(1.1) translateY(-4px);
     background: rgba(37, 211, 102, 0.9);
     box-shadow: 0 12px 40px rgba(37, 211, 102, 0.4);
 }
 
-.floating-whatsapp-balloon:hover i {
+.balao-whatsapp-flutuante:hover i {
     color: var(--white);
 }
 
 @keyframes whatsappPulse {
-    0% {
-        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.15), 0 0 0 0 rgba(37, 211, 102, 0.3);
-    }
-
-    50% {
-        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.25), 0 0 0 12px rgba(37, 211, 102, 0.0);
-    }
-
-    100% {
-        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.15), 0 0 0 0 rgba(37, 211, 102, 0.0);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/* --- Ajuste da Logo com Imagem Integrada --- */
-.logo a {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    /* Espaçamento elegante entre o texto e a imagem da logo */
+/* =======================================================
+   INVERSÃO DE CORES: FUNDO CINZA E CARDS BRANCOS
+   ======================================================= */
+
+/* 1. Fundo das Seções passa a ser Cinza Clarinho */
+.secao-barra-resultados,
+.nossa-historia-2,
+.secao-sobre-nos,
+.secao-passos-metodologia,
+.secao-empresas-confiam,
+.secao-vagas-vidro,
+.secao-diferenciais,
+.secao-podcast, 
+.secao-central-conteudo, 
+.secao-central-contato {
+    background-color: var(--bg-light) !important;
 }
 
-.navbar-logo-img {
-    height: 80px;
-    /* Altura ideal e discreta para a barra de navegação estilo Apple */
-    width: auto;
-    object-fit: contain;
-    transition: var(--transition-apple);
-    vertical-align: middle;
-    border-radius: 15px;
-    /* Bordas suavizadas para um toque mais Apple */
-}
-
-/* Suavização para telas retina ou quando a navbar estiver em estado Scrolled */
-header.scrolled .navbar-logo-img {
-    height: 26px;
-    /* Reduz sutilmente junto com a navbar ao scrollar, se desejar */
-}
-
-/* ==========================================================================
-   --- BLOCO DE CORREÇÃO DE VAZAMENTO VISUAL (MOBILE ANTI-SCROLL) ---
-   ========================================================================== */
-
-/* Ajuste preventivo para telas mobile (inferiores a 768px) */
-@media (max-width: 767px) {
-    .container {
-        /* Reduz o padding agressivo de 70px para 20px, mantendo a área útil visível */
-        padding: 0 35px !important;
-        max-width: 100vw;
-        overflow: hidden;
-    }
-
-    /* Impede que o elemento com número absoluto vaze para fora dos cards de metodologia */
-    .methodology-card {
-        overflow: hidden;
-    }
-
-    /* Corrige o balão da logo e do WhatsApp para não esticarem o viewport horizontal */
-    .floating-logo-balloon,
-    .floating-whatsapp-balloon {
-        max-width: calc(100vw - 60px);
-    }
-
-    /* Garante que imagens de seções quem somos ou grids não quebrem o limite da tela */
-    .about-image-box,
-    .profile-img {
-        max-width: 100% !important;
-    }
+/* 2. Fundo de todos os Cards e Caixas passa a ser Branco */
+.card-historia,
+.cartao-institucional,
+.cartao-premio,
+.cartao-servico-vidro,
+.item-checagem,
+.cartao-metodologia,
+.caixa-categoria-pilula,
+.cartao-caixa-vaga,
+.item-trampo,
+.cartao-podcast-vidro,
+.cartao-opcao-contato {
+    background-color: var(--white) !important;
 }
