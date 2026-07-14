@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     
     // --- 1. SISTEMA DE CORREÇÃO DE NAVBAR (APPLE INSPIRED) ---
